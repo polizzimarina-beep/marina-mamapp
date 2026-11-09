@@ -43,21 +43,39 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
   onSelectActivity,
   searchQuery = ''
 }) => {
-  // Active date selection state: default is custom day 24 or open calendar
-  const [selectedDayTab, setSelectedDayTab] = useState<'oggi' | 'domani' | 'custom'>('custom');
-  const [selectedDayNumber, setSelectedDayNumber] = useState<number>(24); // Domenica 24 Maggio 2026
-  
-  // POP-UP CALENDARIO ATTIVO (Aperto di default come richiesto dal prompt)
-  const [isDatePickerOpen, setIsDatePickerOpen] = useState<boolean>(true);
-  
-  // Current month state
-  const [currentMonthIndex, setCurrentMonthIndex] = useState<number>(4); // 4 = Maggio
-  const [currentYear, setCurrentYear] = useState<number>(2026);
+  // Date reali: "Oggi" e "Domani" si calcolano dal giorno corrente
+  const today = useMemo(() => {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }, []);
+  const tomorrow = useMemo(() => {
+    const d = new Date(today);
+    d.setDate(d.getDate() + 1);
+    return d;
+  }, [today]);
+
+  const [selectedDayTab, setSelectedDayTab] = useState<'oggi' | 'domani' | 'custom'>('oggi');
+  const [selectedDate, setSelectedDate] = useState<Date>(today);
+
+  // Il calendario si apre solo toccando "Scegli data"
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState<boolean>(false);
+
+  // Mese mostrato nel calendario (parte dal mese corrente)
+  const [currentMonthIndex, setCurrentMonthIndex] = useState<number>(today.getMonth());
+  const [currentYear, setCurrentYear] = useState<number>(today.getFullYear());
 
   const monthNames = [
     'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno',
     'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
   ];
+  const shortMonthNames = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+
+  const formatShort = (d: Date) => `${d.getDate()} ${shortMonthNames[d.getMonth()]}`;
+  const formatLong = (d: Date) => `${d.getDate()} ${monthNames[d.getMonth()]}`;
+  const formatFull = (d: Date) => `${formatLong(d)} ${d.getFullYear()}`;
+  const isSameDay = (a: Date, b: Date) =>
+    a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 
   const handlePrevMonth = () => {
     if (currentMonthIndex === 0) {
@@ -80,42 +98,37 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
   // Days of week: Lunedì to Domenica
   const weekDays = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
-  // Days grid calculation for Maggio 2026 (Starts on Friday = index 4 in Monday-based week)
-  // Prev month padding (Aprile has 30 days): 27, 28, 29, 30
-  // Maggio has 31 days: 1 .. 31
-  // Next month padding (Giugno): 1 .. 7
+  // Griglia del mese mostrato: 6 righe x 7 giorni, settimana che parte dal lunedì
   const calendarCells = useMemo(() => {
+    const firstOfMonth = new Date(currentYear, currentMonthIndex, 1);
+    const offset = (firstOfMonth.getDay() + 6) % 7; // lunedì = 0
     const cells = [];
-    
-    // Padding from April (27 to 30)
-    for (let d = 27; d <= 30; d++) {
-      cells.push({ day: d, isCurrentMonth: false, fullDate: `2026-04-${d}`, hasEvents: false });
-    }
-
-    // May (1 to 31)
-    const eventDays = [2, 3, 9, 10, 15, 16, 17, 23, 24, 30, 31]; // Typical Palermo family event days
-    for (let d = 1; d <= 31; d++) {
+    for (let i = 0; i < 42; i++) {
+      const date = new Date(currentYear, currentMonthIndex, 1 - offset + i);
+      const isCurrentMonth = date.getMonth() === currentMonthIndex;
+      const isPast = date < today;
+      // Dati di esempio: le attività per famiglie si concentrano nel weekend
+      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
       cells.push({
-        day: d,
-        isCurrentMonth: true,
-        fullDate: `2026-05-${String(d).padStart(2, '0')}`,
-        hasEvents: eventDays.includes(d)
+        date,
+        day: date.getDate(),
+        isCurrentMonth,
+        isPast,
+        hasEvents: isCurrentMonth && !isPast && isWeekend
       });
     }
-
-    // Next month padding (1 to 7 June to complete rows)
-    const remaining = 42 - cells.length;
-    for (let d = 1; d <= remaining; d++) {
-      cells.push({ day: d, isCurrentMonth: false, fullDate: `2026-06-${d}`, hasEvents: false });
-    }
-
     return cells;
-  }, []);
+  }, [currentYear, currentMonthIndex, today]);
 
-  const handleSelectDay = (dayNum: number, isCurrentMonth: boolean) => {
-    if (!isCurrentMonth) return;
-    setSelectedDayNumber(dayNum);
-    setSelectedDayTab('custom');
+  const selectDate = (date: Date, tab: 'oggi' | 'domani' | 'custom') => {
+    setSelectedDate(date);
+    setSelectedDayTab(tab);
+  };
+
+  const handleSelectDay = (date: Date, isSelectable: boolean) => {
+    if (!isSelectable) return;
+    const tab = isSameDay(date, today) ? 'oggi' : isSameDay(date, tomorrow) ? 'domani' : 'custom';
+    selectDate(date, tab);
   };
 
   // Filter activities based on selected date
@@ -135,7 +148,7 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
       {/* 1. INTESTAZIONE E FILTRI SUPERIORI:                                       */}
       {/* Pillole "Oggi 15 Mag", "Domani 16 Mag" e "Scegli data"                    */}
       {/* "Scegli data" appare visivamente selezionato con sottile bordo Magenta    */}
-      {/* Scuro (#6B283A)                                                           */}
+      {/* Scuro (var(--color-brand-600))                                                           */}
       {/* ========================================================================= */}
       <div className="pt-2 pb-1 border-b border-slate-100">
         <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-0.5">
@@ -144,19 +157,18 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
           <button
             type="button"
             onClick={() => {
-              setSelectedDayTab('oggi');
-              setSelectedDayNumber(15);
+              selectDate(today, 'oggi');
               setIsDatePickerOpen(false);
             }}
             className={`px-4 sm:px-5 py-2 rounded-2xl flex flex-col items-center justify-center transition-all cursor-pointer shrink-0 ${
               selectedDayTab === 'oggi' && !isDatePickerOpen
-                ? 'bg-white text-[#6B283A] border border-[#6B283A] shadow-xs font-bold'
+                ? 'bg-white text-[var(--color-brand-600)] border border-[var(--color-brand-600)] shadow-xs font-bold'
                 : 'bg-white text-slate-700 border border-slate-200/80 hover:border-slate-300 font-medium'
             }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Oggi</span>
             <span className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight mt-0.5">
-              15 Mag
+              {formatShort(today)}
             </span>
           </button>
 
@@ -164,38 +176,37 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
           <button
             type="button"
             onClick={() => {
-              setSelectedDayTab('domani');
-              setSelectedDayNumber(16);
+              selectDate(tomorrow, 'domani');
               setIsDatePickerOpen(false);
             }}
             className={`px-4 sm:px-5 py-2 rounded-2xl flex flex-col items-center justify-center transition-all cursor-pointer shrink-0 ${
               selectedDayTab === 'domani' && !isDatePickerOpen
-                ? 'bg-white text-[#6B283A] border border-[#6B283A] shadow-xs font-bold'
+                ? 'bg-white text-[var(--color-brand-600)] border border-[var(--color-brand-600)] shadow-xs font-bold'
                 : 'bg-white text-slate-700 border border-slate-200/80 hover:border-slate-300 font-medium'
             }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Domani</span>
             <span className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight mt-0.5">
-              16 Mag
+              {formatShort(tomorrow)}
             </span>
           </button>
 
-          {/* Pillola 3: "Scegli data" (STATO ATTIVO: visivamente selezionato con sottile bordo Magenta Scuro #6B283A) */}
+          {/* Pillola 3: "Scegli data" (STATO ATTIVO: visivamente selezionato con sottile bordo Magenta/Rosa-lampone var(--color-brand-600)) */}
           <div className="relative shrink-0">
             <button
               type="button"
               onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
               className={`px-4 sm:px-5 py-2.5 rounded-2xl border transition-all flex items-center gap-2 cursor-pointer shadow-xs ${
                 isDatePickerOpen || selectedDayTab === 'custom'
-                  ? 'bg-white text-[#6B283A] border border-[#6B283A] ring-1 ring-[#6B283A]/20 font-bold'
+                  ? 'bg-white text-[var(--color-brand-600)] border border-[var(--color-brand-600)] ring-1 ring-[var(--color-brand-600)]/20 font-bold'
                   : 'bg-white text-slate-700 border-slate-200/80 hover:border-slate-300 font-medium'
               }`}
             >
-              <CalendarIcon className="w-4 h-4 text-[#6B283A] stroke-[1.8]" />
+              <CalendarIcon className="w-4 h-4 text-[var(--color-brand-600)] stroke-[1.8]" />
               <span className="text-xs sm:text-sm">
-                {selectedDayTab === 'custom' && selectedDayNumber ? `${selectedDayNumber} Maggio` : 'Scegli data'}
+                {selectedDayTab === 'custom' ? formatLong(selectedDate) : 'Scegli data'}
               </span>
-              <ChevronDown className={`w-3.5 h-3.5 text-[#6B283A] transition-transform duration-200 ${isDatePickerOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-3.5 h-3.5 text-[var(--color-brand-600)] transition-transform duration-200 ${isDatePickerOpen ? 'rotate-180' : ''}`} />
             </button>
           </div>
 
@@ -208,7 +219,7 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
       {/* - Sfondo: Bianco puro (#FFFFFF) con bordi arrotondati e ombra leggerissima*/}
       {/* - Intestazione mese: "Maggio 2026" con 2 freccette minimali               */}
       {/* - Giorni settimana (L, M, M, G, V, S, D) in grigio lavagna                */}
-      {/* - STATO SELEZIONATO: cerchio pieno Magenta Scuro (#6B283A) con num bianco */}
+      {/* - STATO SELEZIONATO: cerchio pieno Magenta/Rosa-lampone (var(--color-brand-600)) con num bianco */}
       {/* ========================================================================= */}
       {isDatePickerOpen && (
         <div className="relative z-30 animate-in fade-in slide-in-from-top-3 duration-200">
@@ -257,18 +268,19 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
             {/* Griglia dei Giorni del Mese */}
             <div className="grid grid-cols-7 gap-1 text-center">
               {calendarCells.map((cell, idx) => {
-                const isSelected = cell.isCurrentMonth && cell.day === selectedDayNumber;
+                const isSelectable = cell.isCurrentMonth && !cell.isPast;
+                const isSelected = cell.isCurrentMonth && isSameDay(cell.date, selectedDate);
 
                 return (
                   <div key={idx} className="flex flex-col items-center justify-center py-1">
                     <button
                       type="button"
-                      disabled={!cell.isCurrentMonth}
-                      onClick={() => handleSelectDay(cell.day, cell.isCurrentMonth)}
+                      disabled={!isSelectable}
+                      onClick={() => handleSelectDay(cell.date, isSelectable)}
                       className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex flex-col items-center justify-center text-xs sm:text-sm font-medium transition-all relative cursor-pointer ${
                         isSelected
-                          ? 'bg-[#6B283A] text-white font-bold shadow-xs scale-105'
-                          : cell.isCurrentMonth
+                          ? 'bg-[var(--color-brand-600)] text-white font-bold shadow-xs scale-105'
+                          : isSelectable
                           ? 'text-slate-700 hover:bg-slate-50'
                           : 'text-slate-300 cursor-default hover:bg-transparent'
                       }`}
@@ -279,7 +291,7 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
                       {cell.hasEvents && (
                         <span 
                           className={`w-1 h-1 rounded-full absolute bottom-1.5 ${
-                            isSelected ? 'bg-white' : 'bg-[#6B283A]'
+                            isSelected ? 'bg-white' : 'bg-[var(--color-brand-600)]'
                           }`} 
                         />
                       )}
@@ -292,13 +304,13 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
             {/* Barra inferiore calendario: Data selezionata & Bottone Conferma */}
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
               <span className="text-slate-500 font-medium">
-                Selezionato: <strong className="text-slate-800 font-bold">{selectedDayNumber} Maggio 2026</strong>
+                Selezionato: <strong className="text-slate-800 font-bold">{formatFull(selectedDate)}</strong>
               </span>
 
               <button
                 type="button"
                 onClick={() => setIsDatePickerOpen(false)}
-                className="bg-[#6B283A] hover:bg-[#581F2F] text-white text-xs font-semibold px-4 py-2 rounded-full transition-all active:scale-95 cursor-pointer shadow-xs"
+                className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-700)] text-white text-xs font-semibold px-4 py-2 rounded-full transition-all active:scale-95 cursor-pointer shadow-xs"
               >
                 Conferma
               </button>
@@ -321,8 +333,8 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
             ATTIVITÀ DISPONIBILI ({filteredActivities.length})
           </span>
-          <span className="text-xs font-semibold text-[#6B283A]">
-            {selectedDayNumber} Maggio 2026
+          <span className="text-xs font-semibold text-[var(--color-brand-600)]">
+            {formatFull(selectedDate)}
           </span>
         </div>
 
@@ -352,7 +364,7 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
                 {/* Dettagli centrali */}
                 <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch py-0.5">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B283A] block">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-brand-600)] block">
                       {(act.categoryName || 'Laboratori').toUpperCase()}
                     </span>
 
@@ -387,17 +399,17 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
                       onToggleFavorite(act.id, e);
                     }}
                     aria-label="Salva nei preferiti"
-                    className="p-1 text-slate-300 hover:text-[#6B283A] transition-colors cursor-pointer"
+                    className="p-1 text-slate-300 hover:text-[var(--color-brand-600)] transition-colors cursor-pointer"
                   >
                     <Heart 
                       className={`w-5 h-5 stroke-[1.8] ${
-                        isFavorite ? 'fill-[#6B283A] text-[#6B283A]' : 'text-slate-300'
+                        isFavorite ? 'fill-[var(--color-brand-600)] text-[var(--color-brand-600)]' : 'text-slate-300'
                       }`} 
                     />
                   </button>
 
                   <div className="flex flex-col items-end gap-1">
-                    <span className="font-bold text-sm sm:text-base text-[#6B283A]">
+                    <span className="font-bold text-sm sm:text-base text-[var(--color-brand-600)]">
                       {priceDisplay}
                     </span>
 
@@ -407,7 +419,7 @@ export const ThreeColumnCalendarView: React.FC<ThreeColumnCalendarViewProps> = (
                         e.stopPropagation();
                         onSelectActivity(act);
                       }}
-                      className="bg-[#6B283A] hover:bg-[#581F2F] text-white text-[11px] sm:text-xs font-semibold px-3 py-1 rounded-full transition-all active:scale-95 cursor-pointer"
+                      className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-700)] text-white text-[11px] sm:text-xs font-semibold px-3 py-1 rounded-full transition-all active:scale-95 cursor-pointer"
                     >
                       Dettagli
                     </button>

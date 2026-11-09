@@ -3,23 +3,8 @@ import {
   Header 
 } from './components/Header';
 import { 
-  LeftSidebar 
-} from './components/LeftSidebar';
-import { 
   BottomNavBar 
 } from './components/BottomNavBar';
-import { 
-  CategoryCardsRow 
-} from './components/CategoryCardsRow';
-import { 
-  QuickFilterNav 
-} from './components/QuickFilterNav';
-import { 
-  WeeklyBulletinSection 
-} from './components/WeeklyBulletinSection';
-import { 
-  PromoCarousel 
-} from './components/PromoCarousel';
 import { 
   ActivityCard 
 } from './components/ActivityCard';
@@ -41,21 +26,12 @@ import {
 import { 
   MapScreenView 
 } from './components/MapScreenView';
-import { 
-  PlanningCalendarView 
-} from './components/PlanningCalendarView';
-import {
-  HomeTwoColumnView
-} from './components/HomeTwoColumnView';
 import {
   HomeDashboardView
 } from './components/HomeDashboardView';
 import {
   ParksScreenView
 } from './components/ParksScreenView';
-import {
-  CategoryGridPresentationView
-} from './components/CategoryGridPresentationView';
 import {
   TicketsAndBookingsView
 } from './components/TicketsAndBookingsView';
@@ -185,7 +161,7 @@ export default function App() {
   const [isTicketsModalOpen, setIsTicketsModalOpen] = useState<boolean>(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
   const [filterModalTab, setFilterModalTab] = useState<FilterCategoryTab>('eta');
-  const [isParksScreenOpen, setIsParksScreenOpen] = useState<boolean>(true);
+  const [isParksScreenOpen, setIsParksScreenOpen] = useState<boolean>(false);
   const [activeCategoryType, setActiveCategoryType] = useState<string>('parchi');
   const [selectedOrganizerProfile, setSelectedOrganizerProfile] = useState<OrganizerProfile | null>(null);
   const [activeOrganizerPage, setActiveOrganizerPage] = useState<OrganizerProfile | null>(null);
@@ -925,8 +901,8 @@ export default function App() {
             <div className="p-4 sm:p-6 lg:p-8 space-y-6">
               <div className="max-w-6xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-black text-[#701542] flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-[#701542] fill-[#701542]" />
+                  <h2 className="text-xl font-black text-[var(--color-brand-700)] flex items-center gap-2">
+                    <Heart className="w-5 h-5 text-[var(--color-brand-700)] fill-[var(--color-brand-700)]" />
                     I Tuoi Eventi Preferiti a Palermo ({favoriteActivities.length})
                   </h2>
                   <button
@@ -934,17 +910,17 @@ export default function App() {
                       setActiveTab('home');
                       setViewMode('grid');
                     }}
-                    className="text-xs font-bold text-[#0D7480] hover:underline cursor-pointer"
+                    className="text-xs font-bold text-[var(--color-petrolio-600)] hover:underline cursor-pointer"
                   >
                     ← Torna alla Home
                   </button>
                 </div>
 
                 {favoriteActivities.length === 0 ? (
-                  <div className="text-center py-16 bg-[#EBF6F7] rounded-3xl border border-[#BCE2E6] p-8 space-y-3 shadow-2xs">
-                    <Heart className="w-12 h-12 text-[#701542]/40 mx-auto" />
-                    <h3 className="text-base font-bold text-[#701542]">Nessun preferito salvato</h3>
-                    <p className="text-xs text-[#8A375F] max-w-sm mx-auto">
+                  <div className="text-center py-16 bg-[#EBF6F7] rounded-3xl border border-[var(--color-petrolio-200)] p-8 space-y-3 shadow-2xs">
+                    <Heart className="w-12 h-12 text-[var(--color-brand-700)]/40 mx-auto" />
+                    <h3 className="text-base font-bold text-[var(--color-brand-700)]">Nessun preferito salvato</h3>
+                    <p className="text-xs text-[var(--color-brand-700)] max-w-sm mx-auto">
                       Clicca sull'icona a cuore in qualsiasi card per salvare gli eventi tra i tuoi preferiti.
                     </p>
                     <button
@@ -952,7 +928,7 @@ export default function App() {
                         setActiveTab('home');
                         setViewMode('grid');
                       }}
-                      className="bg-[#701542] hover:bg-[#8D1B54] text-white text-xs font-bold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
+                      className="bg-[var(--color-brand-700)] hover:bg-[var(--color-brand-700)] text-white text-xs font-bold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
                     >
                       Esplora Attività
                     </button>

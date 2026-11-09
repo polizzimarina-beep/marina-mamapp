@@ -48,15 +48,15 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
         className="bg-[#FDFCFB] w-full max-w-2xl rounded-t-3xl sm:rounded-3xl border border-slate-100 shadow-xl overflow-hidden max-h-[92vh] sm:max-h-[88vh] flex flex-col relative animate-in slide-in-from-bottom duration-300 cursor-default"
       >
         
-        {/* Top Header - Minimal, white background, Serif brand in #E11D48 */}
+        {/* Top Header - Minimal, white background, Serif brand in var(--color-brand-600) */}
         <div className="p-4 sm:p-5 bg-white border-b border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-[#FFF0F5] text-[#E11D48] flex items-center justify-center border border-[#FCD3E1]">
+            <div className="w-8 h-8 rounded-full bg-[var(--color-brand-50)] text-[var(--color-brand-600)] flex items-center justify-center border border-[var(--color-brand-200)]">
               <Ticket className="w-4 h-4 stroke-[1.75]" />
             </div>
             <div>
               <h2 
-                className="font-serif text-lg font-bold text-[#E11D48]"
+                className="font-serif text-lg font-bold text-[var(--color-brand-600)]"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 I Miei Biglietti & Pass
@@ -94,7 +94,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-medium px-6 py-2.5 rounded-full transition-all cursor-pointer shadow-xs"
+                className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-medium px-6 py-2.5 rounded-full transition-all cursor-pointer shadow-xs"
               >
                 Esplora Eventi
               </button>
@@ -116,7 +116,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                       onClick={() => setSelectedTicket(b)}
                       className={`p-3 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                         isSelected
-                          ? 'bg-[#FFF0F5] border-[#E11D48] shadow-xs ring-1 ring-[#E11D48]/30'
+                          ? 'bg-[var(--color-brand-50)] border-[var(--color-brand-600)] shadow-xs ring-1 ring-[var(--color-brand-600)]/30'
                           : 'bg-white hover:bg-slate-50 border-slate-100 text-slate-700'
                       }`}
                     >
@@ -160,7 +160,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                           Pass Digitale Ufficiale
                         </span>
                         <h3 
-                          className="font-serif font-bold text-base text-[#E11D48]"
+                          className="font-serif font-bold text-base text-[var(--color-brand-600)]"
                           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                         >
                           {selectedTicket.bookingCode}
@@ -180,7 +180,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                         className="text-[9px] font-mono text-slate-500 hover:text-slate-800 transition-colors mt-2 flex items-center justify-center gap-1 mx-auto cursor-pointer"
                       >
                         <span className="truncate max-w-[140px]">{selectedTicket.qrCodeValue}</span>
-                        <span className="text-[#E11D48] font-sans font-medium">{copied ? '✓' : ''}</span>
+                        <span className="text-[var(--color-brand-600)] font-sans font-medium">{copied ? '✓' : ''}</span>
                       </button>
                     </div>
 
@@ -188,7 +188,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                     <div className="space-y-1.5 text-xs bg-slate-50/50 p-3.5 rounded-2xl text-slate-600 border border-slate-100">
                       <p className="font-semibold text-xs text-slate-800">{selectedTicket.activityTitle}</p>
                       <p className="flex items-center gap-1 text-slate-500">
-                        <MapPin className="w-3.5 h-3.5 text-[#E11D48] stroke-[1.5]" />
+                        <MapPin className="w-3.5 h-3.5 text-[var(--color-brand-600)] stroke-[1.5]" />
                         <span>{selectedTicket.venueName}</span>
                       </p>
                       <p className="flex items-center gap-1 text-slate-500">
@@ -206,7 +206,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                   <div className="flex items-center justify-between pt-2 border-t border-slate-100">
                     <a
                       href={`tel:${selectedTicket.venuePhone}`}
-                      className="text-xs font-medium text-slate-600 hover:text-[#E11D48] flex items-center gap-1 transition-colors"
+                      className="text-xs font-medium text-slate-600 hover:text-[var(--color-brand-600)] flex items-center gap-1 transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 stroke-[1.5]" />
                       <span>Chiama Location</span>
@@ -215,7 +215,7 @@ export const MyTicketsModal: React.FC<MyTicketsModalProps> = ({
                     <button
                       type="button"
                       onClick={() => onCancelBooking(selectedTicket.id)}
-                      className="text-xs font-medium text-rose-500 hover:text-rose-600 flex items-center gap-1 cursor-pointer transition-colors"
+                      className="text-xs font-medium text-brand-500 hover:text-brand-600 flex items-center gap-1 cursor-pointer transition-colors"
                     >
                       <Trash2 className="w-3.5 h-3.5 stroke-[1.5]" />
                       <span>Annulla Pass</span>

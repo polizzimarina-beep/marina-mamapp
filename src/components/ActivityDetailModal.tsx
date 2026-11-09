@@ -123,7 +123,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
         {/* ========================================================================= */}
         {/* 1. INTESTAZIONE:                                                          */}
         {/* In alto a sinistra: il logo "Mamapp" in un elegante carattere serif        */}
-        {/* bordeaux (#6B283A).                                                       */}
+        {/* bordeaux (var(--color-brand-700)).                                                       */}
         {/* In alto a destra: icona utente (cerchio contorno) e icona ricerca (lente) */}
         {/* con pulsante chiusura X sottile.                                          */}
         {/* ========================================================================= */}
@@ -137,7 +137,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
             <button
               type="button"
               onClick={handleShare}
-              className="p-1 hover:text-[#6B283A] transition-colors cursor-pointer relative"
+              className="p-1 hover:text-[var(--color-brand-700)] transition-colors cursor-pointer relative"
               title="Condividi"
             >
               <Share2 className="w-5 h-5 stroke-[1.6]" />
@@ -150,7 +150,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
 
             <button
               type="button"
-              className="w-7 h-7 rounded-full border border-slate-300 hover:border-[#6B283A] text-slate-700 hover:text-[#6B283A] flex items-center justify-center transition-colors cursor-pointer"
+              className="w-7 h-7 rounded-full border border-slate-300 hover:border-[var(--color-brand-700)] text-slate-700 hover:text-[var(--color-brand-700)] flex items-center justify-center transition-colors cursor-pointer"
               title="Profilo utente"
             >
               <User className="w-4 h-4 stroke-[1.6]" />
@@ -186,15 +186,15 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
               className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-xs flex items-center justify-center transition-transform active:scale-90 cursor-pointer"
             >
               <Heart 
-                className={`w-5 h-5 ${isFavorite ? 'fill-[#6B283A] text-[#6B283A]' : 'text-slate-400'}`} 
+                className={`w-5 h-5 ${isFavorite ? 'fill-[var(--color-brand-700)] text-[var(--color-brand-700)]' : 'text-slate-400'}`} 
                 strokeWidth={1.8} 
               />
             </button>
           </div>
 
-          {/* Titolo dell'Evento: Grande titolo in alto in carattere bordeaux (#6B283A) */}
+          {/* Titolo dell'Evento: Grande titolo in alto in carattere bordeaux (var(--color-brand-700)) */}
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#6B283A] leading-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[var(--color-brand-700)] leading-tight">
               {activity.title}
             </h1>
 
@@ -297,7 +297,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 <div className="w-7 h-7 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-[10px] ring-2 ring-white">
                   👨
                 </div>
-                <div className="w-7 h-7 rounded-full bg-sky-500 text-white font-bold text-[10px] flex items-center justify-center ring-2 ring-white">
+                <div className="w-7 h-7 rounded-full bg-petrolio-500 text-white font-bold text-[10px] flex items-center justify-center ring-2 ring-white">
                   +{attendeesCount}
                 </div>
               </div>
@@ -309,7 +309,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
             <button
               type="button"
               onClick={handleShare}
-              className="text-xs font-semibold text-sky-600 hover:text-sky-700 hover:underline flex items-center gap-1 cursor-pointer"
+              className="text-xs font-semibold text-petrolio-600 hover:text-petrolio-700 hover:underline flex items-center gap-1 cursor-pointer"
             >
               <span>Invita Amici</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -344,7 +344,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 DA
               </span>
               <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#6B283A]">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[var(--color-brand-700)]">
                   {activity.price === 0 ? 'GRATIS' : `${activity.price} €`}
                 </span>
                 <span className="text-xs text-slate-500 font-medium">
@@ -360,7 +360,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 onClose();
                 onOpenBooking(activity);
               }}
-              className="bg-[#6B283A] hover:bg-[#581F2F] active:scale-[0.98] text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-full transition-all shadow-xs cursor-pointer flex items-center justify-center gap-1.5"
+              className="bg-[var(--color-brand-700)] hover:bg-[var(--color-brand-800)] active:scale-[0.98] text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-full transition-all shadow-xs cursor-pointer flex items-center justify-center gap-1.5"
             >
               <span>Seleziona Date</span>
               <ChevronRight className="w-4 h-4" />

@@ -100,18 +100,18 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
     }
     if (t.includes('zumba') || t.includes('spinning') || t.includes('jump') || t.includes('dance') || t.includes('ballo') || t.includes('fit boxe')) {
       return {
-        bg: 'bg-fuchsia-600 hover:bg-fuchsia-500 text-white border-fuchsia-400',
-        badge: 'bg-fuchsia-800 text-fuchsia-100',
-        pill: 'bg-fuchsia-100 text-fuchsia-900',
-        shadow: 'shadow-fuchsia-900/20'
+        bg: 'bg-brand-600 hover:bg-brand-500 text-white border-brand-400',
+        badge: 'bg-brand-800 text-brand-100',
+        pill: 'bg-brand-100 text-brand-900',
+        shadow: 'shadow-brand-900/20'
       };
     }
     if (t.includes('omnia') || t.includes('gym') || t.includes('piscina') || t.includes('nuoto') || t.includes('aquagym') || t.includes('step') || t.includes('fast') || t.includes('tone')) {
       return {
-        bg: 'bg-sky-600 hover:bg-sky-500 text-white border-sky-400',
-        badge: 'bg-sky-800 text-sky-100',
-        pill: 'bg-sky-100 text-sky-900',
-        shadow: 'shadow-sky-900/20'
+        bg: 'bg-petrolio-600 hover:bg-petrolio-500 text-white border-petrolio-400',
+        badge: 'bg-petrolio-800 text-petrolio-100',
+        pill: 'bg-petrolio-100 text-petrolio-900',
+        shadow: 'shadow-petrolio-900/20'
       };
     }
     if (t.includes('functional') || t.includes('circuit') || t.includes('acrobatica') || t.includes('circo') || t.includes('ninja') || t.includes('total body')) {
@@ -206,7 +206,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-xs sm:text-sm font-black text-slate-700 hover:text-sky-600 transition-colors cursor-pointer bg-slate-100 hover:bg-slate-200 px-3.5 py-1.5 rounded-full"
+            className="flex items-center gap-2 text-xs sm:text-sm font-black text-slate-700 hover:text-petrolio-600 transition-colors cursor-pointer bg-slate-100 hover:bg-slate-200 px-3.5 py-1.5 rounded-full"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Torna alle Attività</span>
@@ -245,7 +245,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             {/* Top Left Tag */}
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center gap-2">
               <span className="bg-slate-900/80 backdrop-blur-md text-slate-200 font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-slate-700">
-                <Building2 className="w-4 h-4 text-sky-400" />
+                <Building2 className="w-4 h-4 text-petrolio-400" />
                 <span>Organizzatore Accreditato</span>
               </span>
             </div>
@@ -272,12 +272,12 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     {organizer.name}
                   </h1>
                   {organizer.verified && (
-                    <CheckCircle2 className="w-6 h-6 text-sky-500 fill-sky-100 shrink-0" title="Organizzatore Verificato" />
+                    <CheckCircle2 className="w-6 h-6 text-petrolio-500 fill-petrolio-100 shrink-0" title="Organizzatore Verificato" />
                   )}
                 </div>
 
-                <p className="text-xs sm:text-sm font-bold text-sky-600 flex items-center gap-2 flex-wrap">
-                  <span className="bg-sky-50 px-2.5 py-0.5 rounded-md border border-sky-100">{organizer.category}</span>
+                <p className="text-xs sm:text-sm font-bold text-petrolio-600 flex items-center gap-2 flex-wrap">
+                  <span className="bg-petrolio-50 px-2.5 py-0.5 rounded-md border border-petrolio-100">{organizer.category}</span>
                   <span>•</span>
                   <span className="text-slate-600 font-medium flex items-center gap-1">
                     <MapPin className="w-4 h-4 text-slate-400" />
@@ -313,7 +313,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     key={idx}
                     className="text-xs font-extrabold bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-full border border-slate-200 flex items-center gap-1.5 shadow-2xs"
                   >
-                    <Award className="w-3.5 h-3.5 text-sky-600" />
+                    <Award className="w-3.5 h-3.5 text-petrolio-600" />
                     {badge}
                   </span>
                 ))}
@@ -327,9 +327,9 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                   href={`https://instagram.com/${organizer.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-pink-50 hover:bg-pink-100 text-pink-700 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-black flex items-center justify-center gap-2 transition-all border border-pink-200 active:scale-95 cursor-pointer"
+                  className="bg-brand-50 hover:bg-brand-100 text-brand-700 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-black flex items-center justify-center gap-2 transition-all border border-brand-200 active:scale-95 cursor-pointer"
                 >
-                  <Instagram className="w-4 h-4 text-pink-600" />
+                  <Instagram className="w-4 h-4 text-brand-600" />
                   <span>Segui {organizer.instagram}</span>
                 </a>
               </div>
@@ -348,7 +348,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
-            <Calendar className="w-4 h-4 text-sky-600" />
+            <Calendar className="w-4 h-4 text-petrolio-600" />
             <span>Corsi &amp; Attività ({organizerActivities.length})</span>
           </button>
 
@@ -359,7 +359,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             }}
             className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 ${
               activeTab === 'palinsesto'
-                ? 'bg-sky-600 text-white shadow-md'
+                ? 'bg-petrolio-600 text-white shadow-md'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
@@ -387,8 +387,8 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="bg-sky-100 text-sky-800 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border border-sky-200 flex items-center gap-1.5">
-                    <Calendar className="w-4 h-4 text-sky-600" />
+                  <span className="bg-petrolio-100 text-petrolio-800 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border border-petrolio-200 flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-petrolio-600" />
                     <span>Programmazione Ufficiale</span>
                   </span>
                 </div>
@@ -410,7 +410,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     if (found) setSelectedActivityForSlots(found);
                   }}
                   defaultValue=""
-                  className="bg-slate-100 text-slate-800 font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer"
+                  className="bg-slate-100 text-slate-800 font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-petrolio-500 cursor-pointer"
                 >
                   <option value="" disabled>🔍 Seleziona corso e vedi giorni...</option>
                   {organizerActivities.map(act => (
@@ -429,7 +429,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                       onClick={() => setSelectedMonthFilter(m)}
                       className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer whitespace-nowrap ${
                         selectedMonthFilter === m
-                          ? 'bg-sky-600 text-white'
+                          ? 'bg-petrolio-600 text-white'
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -449,7 +449,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                 </h3>
                 <button
                   onClick={() => setSelectedMonthFilter('all')}
-                  className="mt-2 text-xs font-black text-white bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded-xl cursor-pointer"
+                  className="mt-2 text-xs font-black text-white bg-petrolio-600 hover:bg-petrolio-700 px-4 py-2 rounded-xl cursor-pointer"
                 >
                   Mostra Tutti i Corsi
                 </button>
@@ -460,7 +460,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                   return (
                     <div
                       key={activity.id}
-                      className="bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:border-sky-500/50"
+                      className="bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:border-petrolio-500/50"
                     >
                       <div>
                         {/* Image */}
@@ -491,13 +491,13 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                         <div className="p-4 space-y-2">
                           <h3 
                             onClick={() => setSelectedActivityForSlots(activity)}
-                            className="font-black text-slate-900 text-base group-hover:text-sky-600 transition-colors cursor-pointer leading-snug line-clamp-2"
+                            className="font-black text-slate-900 text-base group-hover:text-petrolio-600 transition-colors cursor-pointer leading-snug line-clamp-2"
                           >
                             {activity.title}
                           </h3>
 
                           <p className="text-xs text-slate-500 font-medium line-clamp-1 flex items-center gap-1">
-                            <MapPin className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                            <MapPin className="w-3.5 h-3.5 text-petrolio-500 shrink-0" />
                             <span>{activity.venueName} ({activity.zone})</span>
                           </p>
 
@@ -505,7 +505,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                           <div className="pt-2">
                             <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center justify-between">
                               <span>Giorni &amp; Orari:</span>
-                              <span className="text-sky-600 font-black">{activity.slots.length} turni attivi</span>
+                              <span className="text-petrolio-600 font-black">{activity.slots.length} turni attivi</span>
                             </div>
                             <div className="flex flex-wrap gap-1">
                               {activity.slots.slice(0, 3).map((slot, idx) => (
@@ -513,12 +513,12 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                   key={idx}
                                   className="bg-slate-100 text-slate-700 text-[11px] font-extrabold px-2 py-0.5 rounded-md border border-slate-200 flex items-center gap-1"
                                 >
-                                  <Clock className="w-3 h-3 text-sky-500" />
+                                  <Clock className="w-3 h-3 text-petrolio-500" />
                                   {slot.dayOfWeek}: {slot.time || (slot as any).startTime}
                                 </span>
                               ))}
                               {activity.slots.length > 3 && (
-                                <span className="bg-sky-50 text-sky-700 text-[11px] font-extrabold px-2 py-0.5 rounded-md">
+                                <span className="bg-petrolio-50 text-petrolio-700 text-[11px] font-extrabold px-2 py-0.5 rounded-md">
                                   +{activity.slots.length - 3} altri
                                 </span>
                               )}
@@ -533,13 +533,13 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                           onClick={() => setSelectedActivityForSlots(activity)}
                           className="bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-black py-2.5 px-3 rounded-xl transition-all border border-slate-200 flex items-center justify-center gap-1.5 cursor-pointer"
                         >
-                          <Clock className="w-3.5 h-3.5 text-sky-600" />
+                          <Clock className="w-3.5 h-3.5 text-petrolio-600" />
                           <span>Vedi Orari</span>
                         </button>
 
                         <button
                           onClick={() => onOpenBooking(activity)}
-                          className="bg-sky-600 hover:bg-sky-700 text-white text-xs font-black py-2.5 px-3 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer"
+                          className="bg-petrolio-600 hover:bg-petrolio-700 text-white text-xs font-black py-2.5 px-3 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer"
                         >
                           <span>Prenota</span>
                           <ChevronRight className="w-3.5 h-3.5" />
@@ -561,7 +561,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="bg-sky-600 text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-xs flex items-center gap-1.5">
+                  <span className="bg-petrolio-600 text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-xs flex items-center gap-1.5">
                     <Sparkles className="w-4 h-4" />
                     <span>Palinsesto Ufficiale Completo</span>
                   </span>
@@ -581,7 +581,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
               <div className="flex items-center gap-2 flex-wrap">
                 <button
                   onClick={() => setShowWeeklyOverlayModal(true)}
-                  className="bg-gradient-to-r from-sky-600 via-indigo-600 to-sky-700 hover:from-sky-700 hover:to-indigo-700 text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-md flex items-center gap-2 transition-all cursor-pointer active:scale-95"
+                  className="bg-gradient-to-r from-petrolio-600 via-indigo-600 to-petrolio-700 hover:from-petrolio-700 hover:to-indigo-700 text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-md flex items-center gap-2 transition-all cursor-pointer active:scale-95"
                 >
                   <Sparkles className="w-4 h-4 text-amber-300" />
                   <span>Apri Palinsesto Completo (Pop-Up) 🗓️</span>
@@ -618,16 +618,16 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     placeholder="Cerca lezione..."
                     value={palinsestoSearch}
                     onChange={(e) => setPalinsestoSearch(e.target.value)}
-                    className="bg-slate-100 text-xs font-bold text-slate-800 pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 w-36 sm:w-48"
+                    className="bg-slate-100 text-xs font-bold text-slate-800 pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-petrolio-500 w-36 sm:w-48"
                   />
                 </div>
               </div>
             </div>
 
             {/* Banner spiegazione ricorsività */}
-            <div className="bg-sky-50 border border-sky-200 p-3.5 rounded-2xl flex items-center gap-3">
-              <Info className="w-5 h-5 text-sky-600 shrink-0" />
-              <div className="text-xs text-sky-900 font-medium">
+            <div className="bg-petrolio-50 border border-petrolio-200 p-3.5 rounded-2xl flex items-center gap-3">
+              <Info className="w-5 h-5 text-petrolio-600 shrink-0" />
+              <div className="text-xs text-petrolio-900 font-medium">
                 <strong className="font-black">Orario Completo Palestra &amp; Corsi:</strong> Clicca direttamente su qualunque casella o scheda corso per selezionare l'attività ed aprire subito la schermata di prenotazione.
               </div>
             </div>
@@ -652,7 +652,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     onClick={() => setSelectedPalinsestoDay(day)}
                     className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
                       (selectedPalinsestoDay || '').toLowerCase() === (day || '').toLowerCase()
-                        ? 'bg-sky-600 text-white shadow-md'
+                        ? 'bg-petrolio-600 text-white shadow-md'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                   >
@@ -684,7 +684,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                           .map(day => (
                             <th key={day} className="p-3.5 text-center border-r border-slate-800 last:border-r-0 min-w-[140px]">
                               <div className="text-sm font-extrabold">{day}</div>
-                              <div className="text-[10px] text-sky-300 font-normal normal-case">corsi fissi</div>
+                              <div className="text-[10px] text-petrolio-300 font-normal normal-case">corsi fissi</div>
                             </th>
                           ))}
                       </tr>
@@ -774,11 +774,11 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                         <div className="bg-slate-900 text-white px-4 py-3 font-black text-sm flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <span className="uppercase tracking-wider">{day}</span>
-                            <span className="text-[10px] bg-sky-500/30 text-sky-200 px-2 py-0.5 rounded-md font-bold">
+                            <span className="text-[10px] bg-petrolio-500/30 text-petrolio-200 px-2 py-0.5 rounded-md font-bold">
                               Ogni settimana
                             </span>
                           </div>
-                          <span className="bg-sky-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                          <span className="bg-petrolio-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
                             {dayItems.length} lezioni
                           </span>
                         </div>
@@ -796,11 +796,11 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                 <div
                                   key={idx}
                                   onClick={() => onOpenBooking(item.activity)}
-                                  className="bg-white hover:bg-sky-50/50 rounded-xl border border-slate-200 p-3.5 shadow-2xs hover:shadow-md hover:border-sky-400 transition-all space-y-2 group cursor-pointer"
+                                  className="bg-white hover:bg-petrolio-50/50 rounded-xl border border-slate-200 p-3.5 shadow-2xs hover:shadow-md hover:border-petrolio-400 transition-all space-y-2 group cursor-pointer"
                                 >
                                   <div className="flex items-start justify-between gap-2">
-                                    <div className="flex items-center gap-1.5 bg-sky-50 text-sky-900 px-2.5 py-1 rounded-lg border border-sky-100 text-xs font-black">
-                                      <Clock className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+                                    <div className="flex items-center gap-1.5 bg-petrolio-50 text-petrolio-900 px-2.5 py-1 rounded-lg border border-petrolio-100 text-xs font-black">
+                                      <Clock className="w-3.5 h-3.5 text-petrolio-600 shrink-0" />
                                       <span>{item.time}</span>
                                     </div>
 
@@ -818,7 +818,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                         {item.activity.title}
                                       </span>
                                     </div>
-                                    <h4 className="font-extrabold text-slate-900 text-sm group-hover:text-sky-600 transition-colors leading-snug">
+                                    <h4 className="font-extrabold text-slate-900 text-sm group-hover:text-petrolio-600 transition-colors leading-snug">
                                       {item.activity.title}
                                     </h4>
                                     <p className="text-[11px] text-slate-500 font-medium">
@@ -832,7 +832,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                         <Users className="w-3.5 h-3.5 text-slate-400" />
                                         <span>{mainInstructor.name}</span>
                                       </div>
-                                      <span className="text-sky-600 font-black text-[11px] group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
+                                      <span className="text-petrolio-600 font-black text-[11px] group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
                                         <span>Prenota</span>
                                         <ChevronRight className="w-3.5 h-3.5" />
                                       </span>
@@ -863,7 +863,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             {/* Modal Header */}
             <div className="p-6 border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur-md z-10 flex items-start justify-between gap-4">
               <div>
-                <span className="bg-sky-100 text-sky-800 text-[11px] font-black uppercase px-2.5 py-1 rounded-full border border-sky-200">
+                <span className="bg-petrolio-100 text-petrolio-800 text-[11px] font-black uppercase px-2.5 py-1 rounded-full border border-petrolio-200">
                   {selectedActivityForSlots.targetAudienceLabel}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
@@ -886,9 +886,9 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
             <div className="p-6 space-y-6">
 
               {/* Course Switcher Selector inside Modal */}
-              <div className="bg-sky-50 border border-sky-200/80 p-4 rounded-2xl space-y-2">
-                <label className="text-xs font-black text-sky-900 flex items-center gap-1.5">
-                  <Info className="w-4 h-4 text-sky-600" />
+              <div className="bg-petrolio-50 border border-petrolio-200/80 p-4 rounded-2xl space-y-2">
+                <label className="text-xs font-black text-petrolio-900 flex items-center gap-1.5">
+                  <Info className="w-4 h-4 text-petrolio-600" />
                   <span>Passa ad un altro corso dell'organizzatore:</span>
                 </label>
                 <div className="relative">
@@ -898,7 +898,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                       const found = organizerActivities.find(a => a.id === e.target.value);
                       if (found) setSelectedActivityForSlots(found);
                     }}
-                    className="w-full bg-white text-slate-900 font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer appearance-none pr-10 shadow-2xs"
+                    className="w-full bg-white text-slate-900 font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-petrolio-300 focus:outline-none focus:ring-2 focus:ring-petrolio-500 cursor-pointer appearance-none pr-10 shadow-2xs"
                   >
                     {organizerActivities.map(act => (
                       <option key={act.id} value={act.id}>
@@ -939,11 +939,11 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                         <img 
                           src={inst.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80'}
                           alt={inst.name}
-                          className="w-10 h-10 rounded-full object-cover shrink-0 ring-2 ring-sky-500/30"
+                          className="w-10 h-10 rounded-full object-cover shrink-0 ring-2 ring-petrolio-500/30"
                         />
                         <div>
                           <div className="text-xs font-black text-slate-900">{inst.name}</div>
-                          <div className="text-[11px] text-sky-600 font-medium">{inst.role}</div>
+                          <div className="text-[11px] text-petrolio-600 font-medium">{inst.role}</div>
                         </div>
                       </div>
                     ))}
@@ -955,7 +955,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between">
                   <h4 className="text-sm font-black text-slate-900 flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-sky-600" />
+                    <Calendar className="w-4 h-4 text-petrolio-600" />
                     <span>Tutti i Giorni &amp; Orari Disponibili ({selectedActivityForSlots.slots.length}):</span>
                   </h4>
                   <span className="text-xs font-black text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
@@ -967,15 +967,15 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                   {selectedActivityForSlots.slots.map((slot, index) => (
                     <div 
                       key={slot.id || index}
-                      className="bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-sky-500 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                      className="bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-petrolio-500 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                     >
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="bg-slate-900 text-white text-xs font-black px-3 py-1 rounded-lg">
                             {slot.dayOfWeek}
                           </span>
-                          <span className="text-xs font-bold text-slate-700 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-100 flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5 text-sky-600" />
+                          <span className="text-xs font-bold text-slate-700 bg-petrolio-50 px-2.5 py-1 rounded-lg border border-petrolio-100 flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5 text-petrolio-600" />
                             {slot.time || (slot as any).startTime}
                           </span>
                         </div>
@@ -990,7 +990,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                           setSelectedActivityForSlots(null);
                           onOpenBooking(targetActivity);
                         }}
-                        className="bg-sky-600 hover:bg-sky-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                        className="bg-petrolio-600 hover:bg-petrolio-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
                       >
                         <span>Prenota Questo Giorno</span>
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -1152,7 +1152,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     onClick={() => setPalinsestoViewMode('matrix')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                       palinsestoViewMode === 'matrix'
-                        ? 'bg-sky-600 text-white shadow-2xs'
+                        ? 'bg-petrolio-600 text-white shadow-2xs'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
@@ -1162,7 +1162,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     onClick={() => setPalinsestoViewMode('cards')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                       palinsestoViewMode === 'cards'
-                        ? 'bg-sky-600 text-white shadow-2xs'
+                        ? 'bg-petrolio-600 text-white shadow-2xs'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
@@ -1272,7 +1272,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                       <div key={day} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs flex flex-col">
                         <div className="bg-slate-900 text-white px-4 py-3 font-black text-xs uppercase flex items-center justify-between">
                           <span>{day}</span>
-                          <span className="bg-sky-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                          <span className="bg-petrolio-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
                             {dayItems.length} lezioni
                           </span>
                         </div>
@@ -1290,10 +1290,10 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                   setShowWeeklyOverlayModal(false);
                                   onOpenBooking(item.activity);
                                 }}
-                                className="bg-slate-50 hover:bg-sky-50/80 border border-slate-200/90 hover:border-sky-400 rounded-xl p-3.5 transition-all cursor-pointer group space-y-2 shadow-2xs hover:shadow-md"
+                                className="bg-slate-50 hover:bg-petrolio-50/80 border border-slate-200/90 hover:border-petrolio-400 rounded-xl p-3.5 transition-all cursor-pointer group space-y-2 shadow-2xs hover:shadow-md"
                               >
                                 <div>
-                                  <h4 className="font-extrabold text-slate-900 text-sm group-hover:text-sky-700 transition-colors leading-snug">
+                                  <h4 className="font-extrabold text-slate-900 text-sm group-hover:text-petrolio-700 transition-colors leading-snug">
                                     {item.activity.title}
                                   </h4>
                                   <div className="text-xs font-semibold text-slate-600 mt-1">
@@ -1301,12 +1301,12 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                                   </div>
                                 </div>
 
-                                <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between text-xs text-sky-900 font-bold">
+                                <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between text-xs text-petrolio-900 font-bold">
                                   <div className="flex items-center gap-1.5">
-                                    <Clock className="w-3.5 h-3.5 text-sky-600" />
+                                    <Clock className="w-3.5 h-3.5 text-petrolio-600" />
                                     <span>Durata: {getOnlyDuration(item.time)}</span>
                                   </div>
-                                  <span className="text-[11px] font-black text-sky-600 group-hover:translate-x-0.5 transition-transform">
+                                  <span className="text-[11px] font-black text-petrolio-600 group-hover:translate-x-0.5 transition-transform">
                                     Prenota ➔
                                   </span>
                                 </div>

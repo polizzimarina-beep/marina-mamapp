@@ -46,11 +46,11 @@ interface MobileFilterBottomSheetProps {
   filteredCount?: number;
 }
 
-// Palette di Brand: Soft Teal (#00A8B5) per azioni primarie, Warm Coral (#FF6B6B) per accenti numerici
-const COLOR_TEAL = '#00A8B5';
-const COLOR_TEAL_HOVER = '#00929e';
-const COLOR_TEAL_TINT = '#E6F7F8';
-const COLOR_TEAL_BORDER = '#B2EBF2';
+// Palette di Brand: Soft Teal (var(--color-petrolio-600)) per azioni primarie, Warm Coral (#FF6B6B) per accenti numerici
+const COLOR_TEAL = 'var(--color-petrolio-600)';
+const COLOR_TEAL_HOVER = 'var(--color-petrolio-600)';
+const COLOR_TEAL_TINT = 'var(--color-petrolio-50)';
+const COLOR_TEAL_BORDER = 'var(--color-petrolio-200)';
 const COLOR_CORAL = '#FF6B6B';
 
 export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = ({
@@ -184,7 +184,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               {hasActiveFilters && (
                 <span 
                   style={{ backgroundColor: COLOR_TEAL_TINT, color: COLOR_TEAL }}
-                  className="text-[11px] font-bold px-2 py-0.5 rounded-full border border-[#00A8B5]/20"
+                  className="text-[11px] font-bold px-2 py-0.5 rounded-full border border-[var(--color-petrolio-600)]/20"
                 >
                   {totalActiveFiltersCount} attivi
                 </span>
@@ -201,7 +201,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               type="button"
               onClick={onClose}
               style={{ backgroundColor: COLOR_TEAL_TINT, color: COLOR_TEAL }}
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all cursor-pointer border border-[#00A8B5]/25 hover:bg-[#D2F2F5] active:scale-95 shadow-2xs"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all cursor-pointer border border-[var(--color-petrolio-600)]/25 hover:bg-[var(--color-petrolio-100)] active:scale-95 shadow-2xs"
               title="Chiudi"
               aria-label="Chiudi"
             >
@@ -240,7 +240,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               activeCategoryTab === 'eta'
                 ? 'text-white font-bold shadow-xs'
                 : etaCount > 0
-                ? 'bg-[#E6F7F8] text-[#00A8B5] border border-[#00A8B5]/40 font-bold'
+                ? 'bg-[var(--color-petrolio-50)] text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-600)]/40 font-bold'
                 : 'bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-slate-900 font-semibold'
             }`}
           >
@@ -248,7 +248,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
             <span>Età</span>
             {etaCount > 0 && (
               <span className={`w-4 h-4 rounded-full text-[10px] font-black flex items-center justify-center ${
-                activeCategoryTab === 'eta' ? 'bg-white text-[#00A8B5]' : 'bg-[#00A8B5] text-white'
+                activeCategoryTab === 'eta' ? 'bg-white text-[var(--color-petrolio-600)]' : 'bg-[var(--color-petrolio-600)] text-white'
               }`}>
                 {etaCount}
               </span>
@@ -264,7 +264,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               activeCategoryTab === 'attivita'
                 ? 'text-white font-bold shadow-xs'
                 : attivitaCount > 0
-                ? 'bg-[#E6F7F8] text-[#00A8B5] border border-[#00A8B5]/40 font-bold'
+                ? 'bg-[var(--color-petrolio-50)] text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-600)]/40 font-bold'
                 : 'bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-slate-900 font-semibold'
             }`}
           >
@@ -272,7 +272,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
             <span>Attività</span>
             {attivitaCount > 0 && (
               <span className={`w-4 h-4 rounded-full text-[10px] font-black flex items-center justify-center ${
-                activeCategoryTab === 'attivita' ? 'bg-white text-[#00A8B5]' : 'bg-[#00A8B5] text-white'
+                activeCategoryTab === 'attivita' ? 'bg-white text-[var(--color-petrolio-600)]' : 'bg-[var(--color-petrolio-600)] text-white'
               }`}>
                 {attivitaCount}
               </span>
@@ -288,7 +288,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               activeCategoryTab === 'zona'
                 ? 'text-white font-bold shadow-xs'
                 : zonaCount > 0
-                ? 'bg-[#E6F7F8] text-[#00A8B5] border border-[#00A8B5]/40 font-bold'
+                ? 'bg-[var(--color-petrolio-50)] text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-600)]/40 font-bold'
                 : 'bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-slate-900 font-semibold'
             }`}
           >
@@ -296,7 +296,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
             <span>Zona</span>
             {zonaCount > 0 && (
               <span className={`w-4 h-4 rounded-full text-[10px] font-black flex items-center justify-center ${
-                activeCategoryTab === 'zona' ? 'bg-white text-[#00A8B5]' : 'bg-[#00A8B5] text-white'
+                activeCategoryTab === 'zona' ? 'bg-white text-[var(--color-petrolio-600)]' : 'bg-[var(--color-petrolio-600)] text-white'
               }`}>
                 {zonaCount}
               </span>
@@ -312,7 +312,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               activeCategoryTab === 'fascia'
                 ? 'text-white font-bold shadow-xs'
                 : fasciaCount > 0
-                ? 'bg-[#E6F7F8] text-[#00A8B5] border border-[#00A8B5]/40 font-bold'
+                ? 'bg-[var(--color-petrolio-50)] text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-600)]/40 font-bold'
                 : 'bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-slate-900 font-semibold'
             }`}
           >
@@ -320,7 +320,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
             <span>Fascia Oraria</span>
             {fasciaCount > 0 && (
               <span className={`w-4 h-4 rounded-full text-[10px] font-black flex items-center justify-center ${
-                activeCategoryTab === 'fascia' ? 'bg-white text-[#00A8B5]' : 'bg-[#00A8B5] text-white'
+                activeCategoryTab === 'fascia' ? 'bg-white text-[var(--color-petrolio-600)]' : 'bg-[var(--color-petrolio-600)] text-white'
               }`}>
                 {fasciaCount}
               </span>
@@ -340,7 +340,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
               onClick={onToggleFree}
               className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between shadow-2xs ${
                 onlyFree 
-                  ? 'bg-[#F0FDFD] border-[#00A8B5] ring-1 ring-[#00A8B5]/30' 
+                  ? 'bg-[var(--color-petrolio-50)] border-[var(--color-petrolio-600)] ring-1 ring-[var(--color-petrolio-600)]/30' 
                   : 'bg-white border-slate-200/80 hover:border-slate-300'
               }`}
             >
@@ -413,7 +413,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
                           className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                             isChecked 
                               ? 'bg-white/20 text-white' 
-                              : 'bg-slate-50 text-slate-600 border border-slate-100 group-hover:bg-[#E6F7F8] group-hover:text-[#00A8B5]'
+                              : 'bg-slate-50 text-slate-600 border border-slate-100 group-hover:bg-[var(--color-petrolio-50)] group-hover:text-[var(--color-petrolio-600)]'
                           }`}
                         >
                           <Icon className="w-5 h-5 stroke-[2]" />
@@ -434,7 +434,7 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
                       <div 
                         className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 transition-all ${
                           isChecked 
-                            ? 'bg-white text-[#00A8B5] shadow-xs font-bold' 
+                            ? 'bg-white text-[var(--color-petrolio-600)] shadow-xs font-bold' 
                             : 'border-2 border-slate-300 bg-white group-hover:border-slate-400'
                         }`}
                       >
@@ -479,12 +479,12 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
                       }
                       className={`p-3 rounded-2xl border transition-all cursor-pointer flex items-center justify-between ${
                         isChecked
-                          ? 'ring-1 ring-[#00A8B5]/30 shadow-2xs'
+                          ? 'ring-1 ring-[var(--color-petrolio-600)]/30 shadow-2xs'
                           : 'bg-white border-slate-200/80 hover:border-slate-300'
                       }`}
                     >
                       <div className="truncate pr-2">
-                        <span className={`text-xs sm:text-sm font-bold block truncate ${isChecked ? 'text-[#00A8B5]' : 'text-slate-900'}`}>
+                        <span className={`text-xs sm:text-sm font-bold block truncate ${isChecked ? 'text-[var(--color-petrolio-600)]' : 'text-slate-900'}`}>
                           {opt.label}
                         </span>
                         <span className="text-[11px] text-slate-500 font-normal block truncate mt-0.5">
@@ -538,12 +538,12 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
                       }
                       className={`p-3 rounded-2xl border transition-all cursor-pointer flex items-center justify-between ${
                         isChecked
-                          ? 'ring-1 ring-[#00A8B5]/30 shadow-2xs'
+                          ? 'ring-1 ring-[var(--color-petrolio-600)]/30 shadow-2xs'
                           : 'bg-white border-slate-200/80 hover:border-slate-300'
                       }`}
                     >
                       <div>
-                        <div className={`text-xs sm:text-sm font-bold ${isChecked ? 'text-[#00A8B5]' : 'text-slate-900'}`}>
+                        <div className={`text-xs sm:text-sm font-bold ${isChecked ? 'text-[var(--color-petrolio-600)]' : 'text-slate-900'}`}>
                           {opt.label}
                         </div>
                         <div className="text-[11px] text-slate-500 font-normal mt-0.5">{opt.desc}</div>
@@ -595,12 +595,12 @@ export const MobileFilterBottomSheet: React.FC<MobileFilterBottomSheetProps> = (
                       }
                       className={`p-3 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                         isChecked
-                          ? 'ring-1 ring-[#00A8B5]/30 shadow-2xs'
+                          ? 'ring-1 ring-[var(--color-petrolio-600)]/30 shadow-2xs'
                           : 'bg-white border-slate-200/80 hover:border-slate-300'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <span className={`text-xs sm:text-sm font-bold ${isChecked ? 'text-[#00A8B5]' : 'text-slate-900'}`}>
+                        <span className={`text-xs sm:text-sm font-bold ${isChecked ? 'text-[var(--color-petrolio-600)]' : 'text-slate-900'}`}>
                           {opt.label}
                         </span>
                         <div 

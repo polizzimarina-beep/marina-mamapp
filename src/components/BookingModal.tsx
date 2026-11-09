@@ -100,7 +100,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       name: 'Famiglia',
       role: 'mamma',
       avatar: '👩',
-      color: 'bg-pink-100'
+      color: 'bg-brand-100'
     };
 
     const newBooking: Booking = {
@@ -142,13 +142,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         className="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.06)] overflow-hidden max-h-[92vh] sm:max-h-[90vh] flex flex-col relative animate-in slide-in-from-bottom duration-300 cursor-default"
       >
         
-        {/* 1. INTESTAZIONE (Header): Bianco puro, Titolo Serif Magenta Luminoso #E11D48, Sottotitolo Sans-serif grigio chiaro, X cerchietto */}
+        {/* 1. INTESTAZIONE (Header): Bianco puro, Titolo Serif Magenta Luminoso var(--color-brand-600), Sottotitolo Sans-serif grigio chiaro, X cerchietto */}
         <div className="p-4 sm:p-5 bg-white border-b border-slate-100 flex items-center justify-between shrink-0">
           <div className="w-8" /> {/* Spacer per perfetto bilanciamento */}
           
           <div className="text-center flex-1 min-w-0 px-2">
             <h2 
-              className="font-serif text-lg sm:text-xl font-bold text-[#E11D48] tracking-tight leading-snug"
+              className="font-serif text-lg sm:text-xl font-bold text-[var(--color-brand-600)] tracking-tight leading-snug"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               {isSuccess ? 'Prenotazione Confermata!' : 'Prenota Attività a Palermo'}
@@ -174,7 +174,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           {isSuccess && createdBooking ? (
             /* Conferma avvenuta con successo in stile iOS Premium */
             <div className="text-center space-y-5 py-4">
-              <div className="w-14 h-14 rounded-full bg-[#FFF0F5] text-[#E11D48] flex items-center justify-center mx-auto border border-[#FCD3E1]">
+              <div className="w-14 h-14 rounded-full bg-[var(--color-brand-50)] text-[var(--color-brand-600)] flex items-center justify-center mx-auto border border-[var(--color-brand-200)]">
                 <Check className="w-7 h-7 stroke-[2.2]" />
               </div>
               
@@ -194,14 +194,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs text-left space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                   <span className="text-[10px] uppercase font-semibold text-slate-400">Codice Voucher</span>
-                  <span className="text-xs font-mono font-bold text-[#E11D48] bg-[#FFF0F5] px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono font-bold text-[var(--color-brand-600)] bg-[var(--color-brand-50)] px-2 py-0.5 rounded">
                     {createdBooking.bookingCode}
                   </span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm text-slate-800">{createdBooking.activityTitle}</h4>
                   <p className="text-xs text-slate-500 mt-0.5">{createdBooking.venueName}</p>
-                  <p className="text-xs text-[#E11D48] font-medium mt-1">
+                  <p className="text-xs text-[var(--color-brand-600)] font-medium mt-1">
                     {createdBooking.dateSelected}
                   </p>
                 </div>
@@ -214,7 +214,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full bg-[#E11D48] hover:bg-[#D91656] text-white text-sm font-semibold py-3.5 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
+                className="w-full bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-sm font-semibold py-3.5 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
               >
                 Vedi i Miei Biglietti
               </button>
@@ -234,7 +234,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     {activity.title}
                   </h3>
                   <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5 truncate">
-                    <MapPin className="w-3.5 h-3.5 text-[#E11D48] stroke-[1.5] shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-[var(--color-brand-600)] stroke-[1.5] shrink-0" />
                     <span>{activity.venueName}</span>
                   </p>
                 </div>
@@ -262,13 +262,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         onClick={() => setSelectedSlot(slot)}
                         className={`w-full p-3.5 rounded-2xl text-left flex items-center justify-between transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-[#FFF0F5] border border-[#FCD3E1] shadow-xs'
+                            ? 'bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] shadow-xs'
                             : 'bg-white border border-slate-100 hover:border-slate-200'
                         }`}
                       >
                         <div className="flex items-center gap-3">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                            isSelected ? 'bg-transparent text-[#E11D48]' : 'bg-transparent text-slate-400'
+                            isSelected ? 'bg-transparent text-[var(--color-brand-600)]' : 'bg-transparent text-slate-400'
                           }`}>
                             <Clock className="w-4 h-4 stroke-[1.75]" />
                           </div>
@@ -285,7 +285,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         {/* Testo posti: Opzione selezionata ha testo piccolo discreto color Magenta vivace */}
                         <div>
                           {isSelected ? (
-                            <span className="text-xs font-bold text-[#E11D48]">
+                            <span className="text-xs font-bold text-[var(--color-brand-600)]">
                               {slot.availableSeats ? `${slot.availableSeats} posti rimasti` : 'Disponibile'}
                             </span>
                           ) : (
@@ -303,8 +303,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {/* 3. MODALITÀ DI PAGAMENTO: Box bianco puro, bordo sottile */}
               <div className="p-4 bg-white rounded-2xl border border-slate-100 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FFF0F5] flex items-center justify-center text-[#E11D48] shrink-0">
-                    <Lock className="w-4 h-4 stroke-[1.5] text-[#E11D48]" />
+                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-50)] flex items-center justify-center text-[var(--color-brand-600)] shrink-0">
+                    <Lock className="w-4 h-4 stroke-[1.5] text-[var(--color-brand-600)]" />
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-slate-800">
@@ -320,7 +320,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   <span className="text-[11px] text-slate-400 font-sans">
                     Protetto SSL
                   </span>
-                  <div className="w-5 h-5 rounded-full border border-[#E11D48] flex items-center justify-center text-[#E11D48]">
+                  <div className="w-5 h-5 rounded-full border border-[var(--color-brand-600)] flex items-center justify-center text-[var(--color-brand-600)]">
                     <Check className="w-3 h-3 stroke-[2.5]" />
                   </div>
                 </div>
@@ -334,12 +334,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     placeholder="ES. PALERMO10"
-                    className="flex-1 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#E11D48] transition-colors"
+                    className="flex-1 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[var(--color-brand-600)] transition-colors"
                   />
                   <button
                     type="button"
                     onClick={applyPromo}
-                    className="bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all active:scale-[0.98] cursor-pointer shrink-0"
+                    className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all active:scale-[0.98] cursor-pointer shrink-0"
                   >
                     Applica
                   </button>
@@ -373,7 +373,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     type="button"
                     onClick={() => setTicketCount(Math.max(1, ticketCount - 1))}
                     disabled={ticketCount <= 1}
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-[#E11D48] hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer"
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-[var(--color-brand-600)] hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer"
                     aria-label="Diminuisci partecipanti"
                   >
                     <Minus className="w-3.5 h-3.5 stroke-[2]" />
@@ -387,7 +387,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     type="button"
                     onClick={() => setTicketCount(Math.min(10, ticketCount + 1))}
                     disabled={ticketCount >= 10}
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-[#E11D48] hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer"
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-[var(--color-brand-600)] hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent transition-all cursor-pointer"
                     aria-label="Aumenta partecipanti"
                   >
                     <Plus className="w-3.5 h-3.5 stroke-[2]" />
@@ -399,7 +399,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="sticky bottom-0 -mx-5 -mb-5 p-4 sm:p-5 bg-white/95 backdrop-blur-md border-t border-slate-100">
                 <button
                   type="submit"
-                  className="w-full bg-[#E11D48] hover:bg-[#D91656] text-white font-sans font-bold text-sm py-4 rounded-2xl transition-all active:scale-[0.98] shadow-xs cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white font-sans font-bold text-sm py-4 rounded-2xl transition-all active:scale-[0.98] shadow-xs cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>Conferma e Paga {finalTotal} €</span>
                 </button>

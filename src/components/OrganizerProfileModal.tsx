@@ -87,7 +87,7 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
             {/* Top Left Tag */}
             <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
               <span className="bg-slate-900/80 backdrop-blur-md text-slate-200 font-bold text-[11px] px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border border-slate-700">
-                <Building2 className="w-3.5 h-3.5 text-sky-400" />
+                <Building2 className="w-3.5 h-3.5 text-petrolio-400" />
                 <span>Organizzatore Accreditato</span>
               </span>
             </div>
@@ -114,11 +114,11 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                     {organizer.name}
                   </h2>
                   {organizer.verified && (
-                    <CheckCircle2 className="w-5 h-5 text-sky-500 fill-sky-100 shrink-0" title="Verificato" />
+                    <CheckCircle2 className="w-5 h-5 text-petrolio-500 fill-petrolio-100 shrink-0" title="Verificato" />
                   )}
                 </div>
 
-                <p className="text-xs sm:text-sm font-bold text-sky-600 mt-1 flex items-center gap-2">
+                <p className="text-xs sm:text-sm font-bold text-petrolio-600 mt-1 flex items-center gap-2">
                   <span>{organizer.category}</span>
                   <span>•</span>
                   <span className="text-slate-500 font-medium flex items-center gap-1">
@@ -155,7 +155,7 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                     key={idx}
                     className="text-[11px] font-extrabold bg-slate-100 text-slate-700 px-3 py-1 rounded-full border border-slate-200/70 flex items-center gap-1"
                   >
-                    <Award className="w-3 h-3 text-sky-600" />
+                    <Award className="w-3 h-3 text-petrolio-600" />
                     {badge}
                   </span>
                 ))}
@@ -169,9 +169,9 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                   href={`https://instagram.com/${organizer.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-pink-50 hover:bg-pink-100 text-pink-700 px-3.5 py-2 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 transition-colors border border-pink-200 cursor-pointer"
+                  className="bg-brand-50 hover:bg-brand-100 text-brand-700 px-3.5 py-2 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 transition-colors border border-brand-200 cursor-pointer"
                 >
-                  <Instagram className="w-3.5 h-3.5 text-pink-600" />
+                  <Instagram className="w-3.5 h-3.5 text-brand-600" />
                   <span>Segui {organizer.instagram}</span>
                 </a>
               </div>
@@ -183,9 +183,9 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-sky-600" />
+                  <Calendar className="w-5 h-5 text-petrolio-600" />
                   <span>Calendario Eventi & Corsi</span>
-                  <span className="text-xs bg-sky-100 text-sky-800 font-extrabold px-2.5 py-0.5 rounded-full border border-sky-200">
+                  <span className="text-xs bg-petrolio-100 text-petrolio-800 font-extrabold px-2.5 py-0.5 rounded-full border border-petrolio-200">
                     {filteredActivities.length} attività
                   </span>
                 </h3>
@@ -203,7 +203,7 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                     onClick={() => setSelectedMonthFilter(m)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer whitespace-nowrap ${
                       selectedMonthFilter === m
-                        ? 'bg-sky-600 text-white shadow-2xs'
+                        ? 'bg-petrolio-600 text-white shadow-2xs'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                     }`}
                   >
@@ -223,7 +223,7 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                 </p>
                 <button
                   onClick={() => setSelectedMonthFilter('all')}
-                  className="mt-2 text-xs font-black text-sky-600 underline cursor-pointer"
+                  className="mt-2 text-xs font-black text-petrolio-600 underline cursor-pointer"
                 >
                   Mostra Tutti gli Eventi
                 </button>
@@ -263,21 +263,21 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
                         <div className="p-4 space-y-2">
                           <h4 
                             onClick={() => onSelectActivity(activity)}
-                            className="font-black text-slate-900 text-sm group-hover:text-sky-600 transition-colors line-clamp-2 cursor-pointer leading-snug"
+                            className="font-black text-slate-900 text-sm group-hover:text-petrolio-600 transition-colors line-clamp-2 cursor-pointer leading-snug"
                           >
                             {activity.title}
                           </h4>
 
                           <p className="text-xs text-slate-500 font-medium line-clamp-1 flex items-center gap-1">
-                            <MapPin className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                            <MapPin className="w-3.5 h-3.5 text-petrolio-500 shrink-0" />
                             <span>{activity.venueName} ({activity.zone})</span>
                           </p>
 
                           {/* Slots count or Next Date */}
                           {firstSlot && (
                             <div className="flex items-center gap-2 pt-1 text-[11px] font-bold text-slate-600">
-                              <span className="bg-sky-50 text-sky-800 px-2 py-0.5 rounded-md border border-sky-100 flex items-center gap-1">
-                                <Clock className="w-3 h-3 text-sky-600" />
+                              <span className="bg-petrolio-50 text-petrolio-800 px-2 py-0.5 rounded-md border border-petrolio-100 flex items-center gap-1">
+                                <Clock className="w-3 h-3 text-petrolio-600" />
                                 {firstSlot.dayOfWeek.split(' ')[0]} {firstSlot.dayOfWeek.split(' ')[1]}
                               </span>
                               <span className="text-slate-400">•</span>
@@ -300,7 +300,7 @@ export const OrganizerProfileModal: React.FC<OrganizerProfileModalProps> = ({
 
                         <button
                           onClick={() => onOpenBooking(activity)}
-                          className="bg-sky-600 hover:bg-sky-700 text-white text-xs font-black px-3.5 py-2 rounded-xl transition-all shadow-xs flex items-center gap-1 cursor-pointer"
+                          className="bg-petrolio-600 hover:bg-petrolio-700 text-white text-xs font-black px-3.5 py-2 rounded-xl transition-all shadow-xs flex items-center gap-1 cursor-pointer"
                         >
                           <span>Prenota Posto</span>
                           <ChevronRight className="w-3.5 h-3.5" />

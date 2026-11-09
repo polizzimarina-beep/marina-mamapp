@@ -157,7 +157,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
           </button>
 
           <div className="w-8 flex justify-end">
-            <span className="w-2 h-2 rounded-full bg-[#E11D48]" title="Stato Sincronizzato" />
+            <span className="w-2 h-2 rounded-full bg-[var(--color-brand-600)]" title="Stato Sincronizzato" />
           </div>
         </div>
       </header>
@@ -165,7 +165,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
       {/* 2. HEADER EDITORIALE */}
       <section className="max-w-2xl mx-auto w-full px-4 pt-6 pb-4">
         <h1 
-          className="text-2xl sm:text-3xl font-serif text-[#E11D48] font-bold tracking-tight"
+          className="text-2xl sm:text-3xl font-serif text-[var(--color-brand-600)] font-bold tracking-tight"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
           I Miei Biglietti & Prenotazioni
@@ -188,7 +188,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
             <QrCode className="w-3.5 h-3.5 stroke-[1.75]" />
             <span>Biglietti QR</span>
             <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-              activeSegment === 'tickets' ? 'bg-[#E11D48] text-white' : 'bg-slate-200 text-slate-600'
+              activeSegment === 'tickets' ? 'bg-[var(--color-brand-600)] text-white' : 'bg-slate-200 text-slate-600'
             }`}>
               {upcomingBookings.length}
             </span>
@@ -249,7 +249,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                 <button
                   type="button"
                   onClick={onExploreActivities}
-                  className="bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-medium px-6 py-3 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
+                  className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-medium px-6 py-3 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
                 >
                   Scopri le attività di oggi
                 </button>
@@ -293,7 +293,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                         </h2>
                         
                         <div className="flex items-center gap-1 text-xs text-slate-500 mt-1.5 truncate">
-                          <MapPin className="w-3.5 h-3.5 stroke-[1.5] text-[#E11D48] shrink-0" />
+                          <MapPin className="w-3.5 h-3.5 stroke-[1.5] text-[var(--color-brand-600)] shrink-0" />
                           <span className="truncate">{ticket.venueName}</span>
                         </div>
 
@@ -338,13 +338,13 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                         <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                           {/* Corner Markers */}
                           <rect x="5" y="5" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                          <rect x="13" y="13" width="10" height="10" fill="#E11D48" />
+                          <rect x="13" y="13" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
 
                           <rect x="69" y="5" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                          <rect x="77" y="13" width="10" height="10" fill="#E11D48" />
+                          <rect x="77" y="13" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
 
                           <rect x="5" y="69" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                          <rect x="13" y="77" width="10" height="10" fill="#E11D48" />
+                          <rect x="13" y="77" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
 
                           {/* Data Matrix Dots Pattern */}
                           <rect x="37" y="8" width="6" height="6" fill="#1E293B" />
@@ -357,12 +357,12 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                           <rect x="16" y="47" width="6" height="6" fill="#1E293B" />
                           <rect x="24" y="37" width="6" height="6" fill="#1E293B" />
 
-                          <rect x="37" y="37" width="8" height="8" rx="2" fill="#E11D48" />
+                          <rect x="37" y="37" width="8" height="8" rx="2" style={{ fill: "var(--color-brand-600)" }} />
                           <rect x="49" y="37" width="6" height="6" fill="#1E293B" />
                           <rect x="59" y="37" width="6" height="6" fill="#1E293B" />
 
                           <rect x="37" y="49" width="6" height="6" fill="#1E293B" />
-                          <rect x="47" y="49" width="8" height="8" rx="2" fill="#E11D48" />
+                          <rect x="47" y="49" width="8" height="8" rx="2" style={{ fill: "var(--color-brand-600)" }} />
                           <rect x="59" y="49" width="6" height="6" fill="#1E293B" />
 
                           <rect x="37" y="61" width="6" height="6" fill="#1E293B" />
@@ -392,7 +392,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                           className="text-[10px] font-mono text-slate-500 hover:text-slate-800 transition-colors inline-flex items-center gap-1 cursor-pointer"
                         >
                           <span>{ticket.qrCodeValue}</span>
-                          <span className="text-[9px] text-[#E11D48]">
+                          <span className="text-[9px] text-[var(--color-brand-600)]">
                             {copiedCode === ticket.qrCodeValue ? 'Copiato!' : 'Copia'}
                           </span>
                         </button>
@@ -408,7 +408,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                       <button
                         type="button"
                         onClick={() => setFullScreenTicket(ticket)}
-                        className="w-full sm:w-auto bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-medium px-5 py-3 rounded-full transition-all active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                        className="w-full sm:w-auto bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-medium px-5 py-3 rounded-full transition-all active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                       >
                         <Maximize2 className="w-3.5 h-3.5 stroke-[1.75]" />
                         <span>Mostra Biglietto a Schermo Intero</span>
@@ -430,7 +430,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
 
             {/* Suggerimento per l'utente */}
             <div className="p-4 rounded-2xl bg-white border border-slate-100 text-xs text-slate-500 flex items-start gap-3">
-              <ShieldCheck className="w-4 h-4 text-[#E11D48] shrink-0 mt-0.5" />
+              <ShieldCheck className="w-4 h-4 text-[var(--color-brand-600)] shrink-0 mt-0.5" />
               <div>
                 <span className="font-semibold text-slate-700 block">Garanzia Accesso Senza Fila</span>
                 <span>Tutti i pass emessi da Mamapp sono convalidati direttamente con le strutture convenzionate di Palermo.</span>
@@ -458,7 +458,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                 <button
                   type="button"
                   onClick={onExploreActivities}
-                  className="bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-medium px-6 py-3 rounded-full transition-all cursor-pointer shadow-xs"
+                  className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-medium px-6 py-3 rounded-full transition-all cursor-pointer shadow-xs"
                 >
                   Esplora il calendario
                 </button>
@@ -500,7 +500,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setActiveSegment('tickets')}
-                      className="bg-[#E11D48] text-white text-xs font-medium px-4 py-2 rounded-full hover:bg-[#D91656] transition-all cursor-pointer shadow-xs"
+                      className="bg-[var(--color-brand-600)] text-white text-xs font-medium px-4 py-2 rounded-full hover:bg-[var(--color-brand-600)] transition-all cursor-pointer shadow-xs"
                     >
                       Mostra QR
                     </button>
@@ -599,7 +599,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
 
             {/* Testata del Pass */}
             <div>
-              <span className="font-serif text-xl font-bold text-[#E11D48] block" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              <span className="font-serif text-xl font-bold text-[var(--color-brand-600)] block" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 Mamapp Pass
               </span>
               <p className="text-xs text-slate-500 mt-0.5">
@@ -612,17 +612,17 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
               <div className="w-48 h-48 mx-auto flex items-center justify-center p-2 bg-white">
                 <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="5" y="5" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                  <rect x="13" y="13" width="10" height="10" fill="#E11D48" />
+                  <rect x="13" y="13" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
                   <rect x="69" y="5" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                  <rect x="77" y="13" width="10" height="10" fill="#E11D48" />
+                  <rect x="77" y="13" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
                   <rect x="5" y="69" width="26" height="26" rx="4" stroke="#1E293B" strokeWidth="6" />
-                  <rect x="13" y="77" width="10" height="10" fill="#E11D48" />
+                  <rect x="13" y="77" width="10" height="10" style={{ fill: "var(--color-brand-600)" }} />
                   <rect x="37" y="8" width="6" height="6" fill="#1E293B" />
                   <rect x="47" y="8" width="6" height="6" fill="#1E293B" />
                   <rect x="57" y="16" width="6" height="6" fill="#1E293B" />
-                  <rect x="37" y="37" width="8" height="8" rx="2" fill="#E11D48" />
+                  <rect x="37" y="37" width="8" height="8" rx="2" style={{ fill: "var(--color-brand-600)" }} />
                   <rect x="49" y="37" width="6" height="6" fill="#1E293B" />
-                  <rect x="47" y="49" width="8" height="8" rx="2" fill="#E11D48" />
+                  <rect x="47" y="49" width="8" height="8" rx="2" style={{ fill: "var(--color-brand-600)" }} />
                   <rect x="69" y="37" width="6" height="6" fill="#1E293B" />
                   <rect x="79" y="47" width="6" height="6" fill="#1E293B" />
                   <rect x="89" y="57" width="6" height="6" fill="#1E293B" />
@@ -642,7 +642,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
               <p className="text-slate-500">{fullScreenTicket.venueName}</p>
               <div className="flex justify-between text-slate-600 pt-1 border-t border-slate-200/60 text-[11px]">
                 <span>{fullScreenTicket.dateSelected}</span>
-                <span className="font-medium text-[#E11D48]">{fullScreenTicket.slot.time}</span>
+                <span className="font-medium text-[var(--color-brand-600)]">{fullScreenTicket.slot.time}</span>
               </div>
             </div>
 
@@ -650,7 +650,7 @@ export const TicketsAndBookingsView: React.FC<TicketsAndBookingsViewProps> = ({
             <button
               type="button"
               onClick={() => setFullScreenTicket(null)}
-              className="w-full bg-[#E11D48] hover:bg-[#D91656] text-white text-xs font-medium py-3 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
+              className="w-full bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-600)] text-white text-xs font-medium py-3 rounded-full transition-all active:scale-[0.98] cursor-pointer shadow-xs"
             >
               Fatto
             </button>

@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={handleSearchIconClick}
-              className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[#B81D5B] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
+              className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[var(--color-brand-600)] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
               title="Cerca attività"
               aria-label="Cerca attività"
             >
@@ -128,13 +128,13 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={() => onOpenFilters?.()}
-              className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[#B81D5B] hover:bg-slate-50 transition-all cursor-pointer relative active:scale-95"
+              className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[var(--color-brand-600)] hover:bg-slate-50 transition-all cursor-pointer relative active:scale-95"
               title="Filtri attività"
               aria-label="Filtri attività"
             >
               <SlidersHorizontal className="w-5 h-5 stroke-[2]" />
               {hasActiveFilters && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#B81D5B] ring-2 ring-white" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[var(--color-brand-600)] ring-2 ring-white" />
               )}
             </button>
 
@@ -143,7 +143,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setShowMemberDropdown(!showMemberDropdown)}
-                className="w-9 h-9 rounded-full bg-[#FDF2F6] border border-[#FBCFE8] text-[#B81D5B] flex items-center justify-center shadow-2xs hover:bg-[#FCE7F0] transition-colors cursor-pointer group active:scale-95"
+                className="w-9 h-9 rounded-full bg-[#FDF2F6] border border-[var(--color-brand-200)] text-[var(--color-brand-600)] flex items-center justify-center shadow-2xs hover:bg-[var(--color-brand-50)] transition-colors cursor-pointer group active:scale-95"
                 title="Profilo Utente"
                 aria-label="Profilo Utente"
               >
@@ -155,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <div className="absolute top-full right-0 mt-2 w-72 bg-white text-slate-800 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-slate-100 py-3 z-50 animate-in fade-in zoom-in-95">
                   <div className="px-4 pb-2.5 border-b border-slate-100 flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-bold text-[#B81D5B] uppercase tracking-wider">
+                      <div className="text-[10px] font-bold text-[var(--color-brand-600)] uppercase tracking-wider">
                         Profilo Famiglia
                       </div>
                       <div className="text-xs font-bold text-slate-900">
@@ -163,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
                       </div>
                     </div>
                     {familyMembers.length > 0 && (
-                      <span className="bg-[#FDF2F6] text-[#B81D5B] text-[10px] font-bold px-2 py-0.5 rounded-full border border-pink-100">
+                      <span className="bg-[#FDF2F6] text-[var(--color-brand-600)] text-[10px] font-bold px-2 py-0.5 rounded-full border border-brand-100">
                         {familyMembers.length} membri
                       </span>
                     )}
@@ -177,14 +177,14 @@ export const Header: React.FC<HeaderProps> = ({
                         setShowMemberDropdown(false);
                       }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs font-medium flex items-center justify-between transition-all cursor-pointer ${
-                        !selectedFamilyMember ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold' : 'text-slate-700 hover:bg-slate-50'
+                        !selectedFamilyMember ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold' : 'text-slate-700 hover:bg-slate-50'
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-[#B81D5B]" />
+                        <Users className="w-4 h-4 text-[var(--color-brand-600)]" />
                         <span>Mostra per tutta la famiglia</span>
                       </div>
-                      {!selectedFamilyMember && <Check className="w-3.5 h-3.5 text-[#B81D5B]" />}
+                      {!selectedFamilyMember && <Check className="w-3.5 h-3.5 text-[var(--color-brand-600)]" />}
                     </button>
 
                     {familyMembers.map((member) => (
@@ -196,18 +196,18 @@ export const Header: React.FC<HeaderProps> = ({
                           setShowMemberDropdown(false);
                         }}
                         className={`w-full text-left px-3 py-2 rounded-xl text-xs font-medium flex items-center justify-between transition-all cursor-pointer ${
-                          selectedFamilyMember?.id === member.id ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold' : 'text-slate-700 hover:bg-slate-50'
+                          selectedFamilyMember?.id === member.id ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold' : 'text-slate-700 hover:bg-slate-50'
                         }`}
                       >
                         <div className="flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-slate-100 text-[#B81D5B] font-bold text-[10px] flex items-center justify-center">
+                          <span className="w-6 h-6 rounded-full bg-slate-100 text-[var(--color-brand-600)] font-bold text-[10px] flex items-center justify-center">
                             {member.name.charAt(0).toUpperCase()}
                           </span>
                           <span>{member.name}</span>
                           <span className="text-[10px] text-slate-400">({member.age} anni)</span>
                         </div>
                         {selectedFamilyMember?.id === member.id && (
-                          <Check className="w-3.5 h-3.5 text-[#B81D5B]" />
+                          <Check className="w-3.5 h-3.5 text-[var(--color-brand-600)]" />
                         )}
                       </button>
                     ))}
@@ -220,7 +220,7 @@ export const Header: React.FC<HeaderProps> = ({
                         setShowMemberDropdown(false);
                         if (onOpenManageFamily) onOpenManageFamily();
                       }}
-                      className="text-xs font-bold text-[#B81D5B] hover:underline cursor-pointer"
+                      className="text-xs font-bold text-[var(--color-brand-600)] hover:underline cursor-pointer"
                     >
                       + Gestisci profili
                     </button>
@@ -253,7 +253,7 @@ export const Header: React.FC<HeaderProps> = ({
               value={searchQuery}
               onChange={(e) => onSearchChange?.(e.target.value)}
               placeholder="Cerca attività, categoria o luogo a Palermo..."
-              className="w-full bg-white border border-slate-200/90 rounded-2xl py-2 sm:py-2.5 pl-10 pr-9 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#B81D5B]/15 focus:border-[#B81D5B] transition-all shadow-xs"
+              className="w-full bg-white border border-slate-200/90 rounded-2xl py-2 sm:py-2.5 pl-10 pr-9 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-600)]/15 focus:border-[var(--color-brand-600)] transition-all shadow-xs"
             />
             {searchQuery && (
               <button

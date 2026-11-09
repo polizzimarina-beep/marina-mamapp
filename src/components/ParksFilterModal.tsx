@@ -208,7 +208,7 @@ export const ParksFilterModal: React.FC<ParksFilterModalProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cerca parco, quartiere o caratteristica (es. picnic, tartarughe)..."
-                className="w-full pl-9 pr-9 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#C2185B] focus:bg-white focus:outline-none rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 transition"
+                className="w-full pl-9 pr-9 py-2.5 bg-slate-50 border border-slate-200 focus:border-[var(--color-brand-600)] focus:bg-white focus:outline-none rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 transition"
               />
               {searchQuery && (
                 <button
@@ -238,7 +238,7 @@ export const ParksFilterModal: React.FC<ParksFilterModalProps> = ({
                     key={park.id}
                     className={`flex items-start sm:items-center justify-between p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer select-none gap-3 ${
                       isChecked
-                        ? 'border-[#C2185B] bg-pink-50/40 shadow-xs ring-1 ring-[#C2185B]/30'
+                        ? 'border-[var(--color-brand-600)] bg-brand-50/40 shadow-xs ring-1 ring-[var(--color-brand-600)]/30'
                         : 'border-slate-200/90 hover:border-slate-300 bg-white hover:bg-slate-50/60'
                     }`}
                   >
@@ -283,7 +283,7 @@ export const ParksFilterModal: React.FC<ParksFilterModalProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => togglePark(park.id)}
-                        className="w-5 h-5 rounded cursor-pointer accent-[#C2185B] transition-transform hover:scale-110"
+                        className="w-5 h-5 rounded cursor-pointer accent-[var(--color-brand-600)] transition-transform hover:scale-110"
                       />
                     </div>
                   </label>
@@ -311,7 +311,7 @@ export const ParksFilterModal: React.FC<ParksFilterModalProps> = ({
             <button
               type="button"
               onClick={handleConfirm}
-              className="bg-[#C2185B] hover:bg-[#A01349] active:scale-95 text-white text-xs sm:text-sm font-bold py-2.5 px-5 rounded-full shadow-md hover:shadow-lg transition flex items-center gap-2 cursor-pointer"
+              className="bg-[var(--color-brand-600)] hover:bg-[var(--color-brand-700)] active:scale-95 text-white text-xs sm:text-sm font-bold py-2.5 px-5 rounded-full shadow-md hover:shadow-lg transition flex items-center gap-2 cursor-pointer"
             >
               <Check className="w-4 h-4 stroke-[2.5]" />
               <span>

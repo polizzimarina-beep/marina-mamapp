@@ -63,12 +63,12 @@ interface VectorMapItem {
   description: string;
 }
 
-// Colore di Brand Ufficiale Magenta / Rosa-Lampone Profondo (#B81D5B)
-const COLOR_RASPBERRY = '#B81D5B';
-const COLOR_RASPBERRY_HOVER = '#A3154E';
-const COLOR_RASPBERRY_ACTIVE = '#8E1042';
+// Colore di Brand Ufficiale Magenta / Rosa-Lampone Profondo (var(--color-brand-600))
+const COLOR_RASPBERRY = 'var(--color-brand-600)';
+const COLOR_RASPBERRY_HOVER = 'var(--color-brand-700)';
+const COLOR_RASPBERRY_ACTIVE = 'var(--color-brand-700)';
 const COLOR_RASPBERRY_BG_TINT = '#FDF2F6';
-const COLOR_RASPBERRY_BORDER = '#FBCFE8';
+const COLOR_RASPBERRY_BORDER = 'var(--color-brand-200)';
 
 export const MapScreenView: React.FC<MapScreenViewProps> = ({
   favorites = [],
@@ -103,10 +103,10 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
       id: 'creativi',
       label: 'Creativi',
       icon: Palette,
-      bg: 'bg-[#FFF0F5]',
-      border: 'border-[#FCD3E1]',
-      text: 'text-[#B81D5B]',
-      activeRing: 'ring-[#B81D5B]'
+      bg: 'bg-[var(--color-brand-50)]',
+      border: 'border-[var(--color-brand-200)]',
+      text: 'text-[var(--color-brand-600)]',
+      activeRing: 'ring-[var(--color-brand-600)]'
     },
     {
       id: 'parchi',
@@ -121,10 +121,10 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
       id: 'sport',
       label: 'Sport',
       icon: Waves,
-      bg: 'bg-[#E0F2FE]',
-      border: 'border-[#BAE6FD]',
-      text: 'text-[#0284C7]',
-      activeRing: 'ring-[#0284C7]'
+      bg: 'bg-[var(--color-petrolio-50)]',
+      border: 'border-[var(--color-petrolio-200)]',
+      text: 'text-[var(--color-petrolio-600)]',
+      activeRing: 'ring-[var(--color-petrolio-600)]'
     },
     {
       id: 'spazi',
@@ -517,7 +517,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
               const el = document.getElementById('map-search-input');
               if (el) el.focus();
             }}
-            className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[#B81D5B] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
+            className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[var(--color-brand-600)] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
             title="Cerca nella mappa"
             aria-label="Cerca"
           >
@@ -530,7 +530,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
             onClick={() => {
               if (onOpenFilters) onOpenFilters();
             }}
-            className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[#B81D5B] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
+            className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-[var(--color-brand-600)] hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
             title="Filtri mappa"
             aria-label="Filtri mappa"
           >
@@ -544,7 +544,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
               borderColor: COLOR_RASPBERRY_BORDER,
               color: COLOR_RASPBERRY
             }}
-            className="w-9 h-9 rounded-full border flex items-center justify-center shadow-2xs cursor-pointer hover:bg-[#FCE7F0] transition-colors active:scale-95"
+            className="w-9 h-9 rounded-full border flex items-center justify-center shadow-2xs cursor-pointer hover:bg-[var(--color-brand-50)] transition-colors active:scale-95"
             title="Profilo Utente"
             aria-label="Profilo Utente"
           >
@@ -572,13 +572,13 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cerca attività, zona o età a Palermo..."
-            className="w-full bg-white border border-slate-200/90 rounded-2xl py-2 pl-9 pr-10 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#B81D5B]/15 focus:border-[#B81D5B] transition-all shadow-xs"
+            className="w-full bg-white border border-slate-200/90 rounded-2xl py-2 pl-9 pr-10 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-600)]/15 focus:border-[var(--color-brand-600)] transition-all shadow-xs"
           />
 
           <button
             type="button"
             onClick={handleResetMap}
-            className="absolute right-3 text-slate-600 hover:text-[#B81D5B] transition-colors cursor-pointer p-0.5"
+            className="absolute right-3 text-slate-600 hover:text-[var(--color-brand-600)] transition-colors cursor-pointer p-0.5"
             title="Centra su Palermo"
             aria-label="Centra Mappa"
           >
@@ -646,12 +646,12 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
             }
             className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${
               selectedDateFilter === 'oggi'
-                ? 'border ring-1 ring-[#B81D5B]/20 font-bold'
+                ? 'border ring-1 ring-[var(--color-brand-600)]/20 font-bold'
                 : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
             }`}
           >
             <Calendar 
-              style={{ color: selectedDateFilter === 'oggi' ? COLOR_RASPBERRY : '#B81D5B' }}
+              style={{ color: selectedDateFilter === 'oggi' ? COLOR_RASPBERRY : 'var(--color-brand-600)' }}
               className="w-3.5 h-3.5 stroke-[2.2]" 
             />
             <span>Oggi</span>
@@ -672,7 +672,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
             }
             className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${
               selectedAgeFilter === '3-6'
-                ? 'border ring-1 ring-[#B81D5B]/20 font-bold'
+                ? 'border ring-1 ring-[var(--color-brand-600)]/20 font-bold'
                 : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
             }`}
           >
@@ -857,21 +857,21 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
               strokeLinecap="round"
               fill="none"
             />
-            <text x="360" y="55" fill="#0284C7" fontSize="13" fontWeight="800" letterSpacing="1">
+            <text x="360" y="55" style={{ fill: "var(--color-petrolio-600)" }} fontSize="13" fontWeight="800" letterSpacing="1">
               GOLFO DI MONDELLO
             </text>
-            <text x="820" y="380" fill="#0284C7" fontSize="13" fontWeight="800" letterSpacing="1.5">
+            <text x="820" y="380" style={{ fill: "var(--color-petrolio-600)" }} fontSize="13" fontWeight="800" letterSpacing="1.5">
               GOLFO DI PALERMO
             </text>
 
             {/* Insenatura La Cala (Porto Storico di Palermo) */}
             <path
               d="M770 540 Q740 545 735 560 Q738 575 765 570"
-              fill="#BAE6FD"
+              style={{ fill: "var(--color-petrolio-200)" }}
               stroke="#60A5FA"
               strokeWidth="2"
             />
-            <text x="745" y="590" fill="#0369A1" fontSize="9" fontWeight="700">LA CALA</text>
+            <text x="745" y="590" style={{ fill: "var(--color-petrolio-700)" }} fontSize="9" fontWeight="700">LA CALA</text>
 
             {/* ===================================================================== */}
             {/* RETE STRADALE PRINCIPALE DI PALERMO (Tracciati vettoriali puliti)       */}
@@ -1000,7 +1000,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
               fill="none"
               strokeLinecap="round"
             />
-            <text x="770" y="670" fill="#0284C7" fontSize="8.5" fontWeight="700" transform="rotate(82 770 670)">
+            <text x="770" y="670" style={{ fill: "var(--color-petrolio-600)" }} fontSize="8.5" fontWeight="700" transform="rotate(82 770 670)">
               FORO ITALICO
             </text>
 
@@ -1019,7 +1019,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
           </svg>
 
           {/* ===================================================================== */}
-          {/* 6. PIN SULLA MAPPA: PIN A GOCCIA MAGENTA-LAMPONE PROFONDO (#B81D5B)    */}
+          {/* 6. PIN SULLA MAPPA: PIN A GOCCIA MAGENTA-LAMPONE PROFONDO (var(--color-brand-600))    */}
           {/* Con prezzi in bianco al centro (es. €8, €10, €14, €22, €40)            */}
           {/* ===================================================================== */}
           <div className="absolute inset-0 pointer-events-none">
@@ -1052,7 +1052,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
                         boxShadow: `0 4px 16px rgba(184, 29, 91, 0.45)`
                       }}
                       className={`relative flex items-center justify-center font-extrabold text-white px-2.5 py-1 rounded-full border-2 border-white transition-all ${
-                        isSelected ? 'ring-4 ring-[#B81D5B]/30' : ''
+                        isSelected ? 'ring-4 ring-[var(--color-brand-600)]/30' : ''
                       }`}
                     >
                       <span className="text-[12px] sm:text-[13px] tracking-tight leading-none font-bold">
@@ -1122,7 +1122,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
             type="button"
             onClick={handleResetMap}
             aria-label="Posizione Palermo"
-            className="w-11 h-11 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[#B81D5B] active:scale-95 transition-all cursor-pointer"
+            className="w-11 h-11 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[var(--color-brand-600)] active:scale-95 transition-all cursor-pointer"
           >
             <Navigation className="w-5 h-5 stroke-[2.2]" />
           </button>
@@ -1308,7 +1308,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
                         >
                           {item.categoryName}
                         </div>
-                        <h4 className="font-bold text-sm text-slate-900 group-hover:text-[#B81D5B] transition-colors truncate">
+                        <h4 className="font-bold text-sm text-slate-900 group-hover:text-[var(--color-brand-600)] transition-colors truncate">
                           {item.title}
                         </h4>
 
@@ -1343,7 +1343,7 @@ export const MapScreenView: React.FC<MapScreenViewProps> = ({
                           e.stopPropagation();
                           onToggleFavorite?.(item.id, e);
                         }}
-                        className="absolute top-3 right-3 p-1 text-slate-300 hover:text-[#B81D5B] transition-colors"
+                        className="absolute top-3 right-3 p-1 text-slate-300 hover:text-[var(--color-brand-600)] transition-colors"
                       >
                         <Heart 
                           style={isFav ? { fill: COLOR_RASPBERRY, color: COLOR_RASPBERRY } : undefined}

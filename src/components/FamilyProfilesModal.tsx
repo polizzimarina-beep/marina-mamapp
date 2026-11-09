@@ -31,7 +31,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
     let color = 'bg-amber-100 text-amber-800 border-amber-300';
     if (role === 'mamma') {
       avatar = '👩';
-      color = 'bg-pink-100 text-pink-700 border-pink-300';
+      color = 'bg-brand-100 text-brand-700 border-brand-300';
     } else if (role === 'papa') {
       avatar = '👨';
       color = 'bg-blue-100 text-blue-700 border-blue-300';
@@ -67,7 +67,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
         {/* Header */}
         <div className="p-4 sm:p-5 bg-slate-900 text-white flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-sky-400" />
+            <Users className="w-5 h-5 text-petrolio-400" />
             <h2 className="font-extrabold text-lg">Profili Famiglia Palermo</h2>
           </div>
           <button
@@ -93,13 +93,13 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
                   className="p-3 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-between"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold">
+                    <div className="w-9 h-9 rounded-full bg-petrolio-100 text-petrolio-700 flex items-center justify-center font-bold">
                       {member.role === 'mamma' ? (
-                        <Heart className="w-4 h-4 text-sky-600" />
+                        <Heart className="w-4 h-4 text-petrolio-600" />
                       ) : member.role === 'papa' ? (
-                        <Shield className="w-4 h-4 text-sky-600" />
+                        <Shield className="w-4 h-4 text-petrolio-600" />
                       ) : (
-                        <Baby className="w-4 h-4 text-sky-600" />
+                        <Baby className="w-4 h-4 text-petrolio-600" />
                       )}
                     </div>
                     <div>
@@ -115,7 +115,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
                   {familyMembers.length > 1 && (
                     <button
                       onClick={() => onDeleteMember(member.id)}
-                      className="p-2 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
+                      className="p-2 text-slate-400 hover:text-brand-500 transition-colors cursor-pointer"
                       title="Elimina profilo"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -142,7 +142,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
                   type="button"
                   onClick={() => setRole('bimbo')}
                   className={`py-2 text-xs font-bold rounded-full border transition-all flex items-center justify-center gap-1.5 ${
-                    role === 'bimbo' ? 'bg-sky-600 text-white border-sky-600' : 'bg-white text-slate-700 border-slate-200'
+                    role === 'bimbo' ? 'bg-petrolio-600 text-white border-petrolio-600' : 'bg-white text-slate-700 border-slate-200'
                   }`}
                 >
                   <Baby className="w-3.5 h-3.5" />
@@ -152,7 +152,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
                   type="button"
                   onClick={() => setRole('mamma')}
                   className={`py-2 text-xs font-bold rounded-full border transition-all flex items-center justify-center gap-1.5 ${
-                    role === 'mamma' ? 'bg-sky-600 text-white border-sky-600' : 'bg-white text-slate-700 border-slate-200'
+                    role === 'mamma' ? 'bg-petrolio-600 text-white border-petrolio-600' : 'bg-white text-slate-700 border-slate-200'
                   }`}
                 >
                   <Heart className="w-3.5 h-3.5" />
@@ -162,7 +162,7 @@ export const FamilyProfilesModal: React.FC<FamilyProfilesModalProps> = ({
                   type="button"
                   onClick={() => setRole('papa')}
                   className={`py-2 text-xs font-bold rounded-full border transition-all flex items-center justify-center gap-1.5 ${
-                    role === 'papa' ? 'bg-sky-600 text-white border-sky-600' : 'bg-white text-slate-700 border-slate-200'
+                    role === 'papa' ? 'bg-petrolio-600 text-white border-petrolio-600' : 'bg-white text-slate-700 border-slate-200'
                   }`}
                 >
                   <Shield className="w-3.5 h-3.5" />

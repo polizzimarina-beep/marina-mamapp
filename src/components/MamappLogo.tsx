@@ -77,26 +77,26 @@ export const MamappLogo: React.FC<MamappLogoProps> = ({
           <defs>
             {/* Gradiente ad acquerello per il bordo del pin: Magenta -> Rosa vivace -> Lilla/Viola */}
             <linearGradient id="watercolorPinGrad" x1="20" y1="30" x2="180" y2="200" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#E11D62" />
-              <stop offset="28%" stopColor="#EA2E82" />
-              <stop offset="55%" stopColor="#F46098" />
+              <stop offset="0%" style={{ stopColor: "var(--color-brand-600)" }} />
+              <stop offset="28%" style={{ stopColor: "var(--color-brand-600)" }} />
+              <stop offset="55%" style={{ stopColor: "var(--color-brand-400)" }} />
               <stop offset="78%" stopColor="#B35CE2" />
               <stop offset="100%" stopColor="#8E54D2" />
             </linearGradient>
 
             {/* Sfumatura morbida per effetto pennellata acquerello (texture pittorica) */}
             <linearGradient id="watercolorWashGrad" x1="15" y1="20" x2="185" y2="210" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#E11D62" stopOpacity="0.45" />
-              <stop offset="35%" stopColor="#F472B6" stopOpacity="0.30" />
+              <stop offset="0%" style={{ stopColor: "var(--color-brand-600)" }} stopOpacity="0.45" />
+              <stop offset="35%" style={{ stopColor: "var(--color-brand-400)" }} stopOpacity="0.30" />
               <stop offset="70%" stopColor="#C084FC" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.45" />
             </linearGradient>
 
             {/* Gradiente figura sinistra (Adulto / Mamma - Magenta caldo) */}
             <linearGradient id="leftAdultGrad" x1="60" y1="45" x2="95" y2="135" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#E11D62" />
-              <stop offset="60%" stopColor="#F43F5E" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#FB7185" stopOpacity="0.80" />
+              <stop offset="0%" style={{ stopColor: "var(--color-brand-600)" }} />
+              <stop offset="60%" style={{ stopColor: "var(--color-brand-500)" }} stopOpacity="0.95" />
+              <stop offset="100%" style={{ stopColor: "var(--color-brand-400)" }} stopOpacity="0.80" />
             </linearGradient>
 
             {/* Gradiente figura destra (Adulto / Papà - Lilla e Viola morbido) */}
@@ -108,7 +108,7 @@ export const MamappLogo: React.FC<MamappLogoProps> = ({
 
             {/* Gradiente figura centrale (Bambino al centro - Rosa pesca caldo e rassicurante) */}
             <linearGradient id="centerChildGrad" x1="100" y1="85" x2="100" y2="140" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#FB7185" stopOpacity="0.95" />
+              <stop offset="0%" style={{ stopColor: "var(--color-brand-400)" }} stopOpacity="0.95" />
               <stop offset="100%" stopColor="#FDA4AF" stopOpacity="0.80" />
             </linearGradient>
           </defs>
@@ -195,7 +195,7 @@ export const MamappLogo: React.FC<MamappLogoProps> = ({
           style={{
             fontFamily: "'Comfortaa', 'Quicksand', 'Nunito', system-ui, sans-serif",
             letterSpacing: '-0.025em',
-            background: 'linear-gradient(95deg, #E11D62 0%, #EA2E82 24%, #F46098 50%, #B35CE2 76%, #8E54D2 100%)',
+            background: 'linear-gradient(95deg, var(--color-brand-600) 0%, var(--color-brand-600) 24%, var(--color-brand-400) 50%, #B35CE2 76%, #8E54D2 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             display: 'inline-block'

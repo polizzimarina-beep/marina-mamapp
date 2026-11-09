@@ -131,8 +131,8 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#701542]" />
-              <span className="text-[11px] font-black uppercase tracking-wider text-[#701542]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-brand-700)]" />
+              <span className="text-[11px] font-black uppercase tracking-wider text-[var(--color-brand-700)]">
                 Piani & Tariffe Flessibili
               </span>
             </div>
@@ -145,7 +145,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
           </div>
 
           <div className="flex items-center gap-2 self-start sm:self-auto bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700">
-            <ShieldCheck className="w-4 h-4 text-[#0D7480]" />
+            <ShieldCheck className="w-4 h-4 text-[var(--color-petrolio-600)]" />
             <span>Garanzia rimborso 100%</span>
           </div>
         </div>
@@ -153,9 +153,9 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
 
       {/* Confirmation Toast Notification if bought */}
       {purchasedPkg && (
-        <div className="bg-[#FAF0F4] border-b border-[#701542]/20 px-6 py-2.5 text-xs font-bold text-[#701542] flex items-center justify-between animate-in fade-in duration-200">
+        <div className="bg-[var(--color-brand-50)] border-b border-[var(--color-brand-700)]/20 px-6 py-2.5 text-xs font-bold text-[var(--color-brand-700)] flex items-center justify-between animate-in fade-in duration-200">
           <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#701542]" />
+            <CheckCircle2 className="w-4 h-4 text-[var(--color-brand-700)]" />
             Pacchetto aggiunto con successo al carrello!
           </span>
           <span className="text-[11px] text-slate-500">Pronto per il checkout</span>
@@ -172,13 +172,13 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
               className={`p-2 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                 selectedMobileTab === pkg.id
                   ? pkg.isPopular
-                    ? 'bg-white text-[#701542] border-2 border-[#701542] shadow-xs font-black'
-                    : 'bg-white text-[#0D7480] border border-[#0D7480] shadow-xs font-black'
+                    ? 'bg-white text-[var(--color-brand-700)] border-2 border-[var(--color-brand-700)] shadow-xs font-black'
+                    : 'bg-white text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-600)] shadow-xs font-black'
                   : 'text-slate-600 bg-white/70 border border-slate-200 hover:bg-white'
               }`}
             >
               <div className="truncate">{pkg.name}</div>
-              <div className="text-[11px] font-extrabold text-[#0D7480]">{pkg.priceDisplay}</div>
+              <div className="text-[11px] font-extrabold text-[var(--color-petrolio-600)]">{pkg.priceDisplay}</div>
             </button>
           ))}
         </div>
@@ -212,19 +212,19 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                     key={pkg.id}
                     className={`w-[19%] p-4 align-top transition-colors relative ${
                       isHighlight 
-                        ? 'bg-[#FAF0F4]/30 ring-2 ring-inset ring-[#701542]' 
+                        ? 'bg-[var(--color-brand-50)]/30 ring-2 ring-inset ring-[var(--color-brand-700)]' 
                         : 'bg-white'
                     }`}
                   >
                     {/* Highlight Badge "PIÙ SCELTO" */}
                     <div className="h-6 flex items-center mb-1">
                       {isHighlight ? (
-                        <span className="inline-flex items-center gap-1 bg-[#FAF0F4] text-[#701542] border border-[#701542]/30 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs">
-                          <Sparkles className="w-3 h-3 text-[#701542]" />
+                        <span className="inline-flex items-center gap-1 bg-[var(--color-brand-50)] text-[var(--color-brand-700)] border border-[var(--color-brand-700)]/30 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs">
+                          <Sparkles className="w-3 h-3 text-[var(--color-brand-700)]" />
                           PIÙ SCELTO
                         </span>
                       ) : pkg.savingsBadge ? (
-                        <span className="inline-block bg-[#FAF0F4] text-[#701542] text-[10px] font-bold px-2 py-0.5 rounded-md border border-[#701542]/20">
+                        <span className="inline-block bg-[var(--color-brand-50)] text-[var(--color-brand-700)] text-[10px] font-bold px-2 py-0.5 rounded-md border border-[var(--color-brand-700)]/20">
                           {pkg.savingsBadge}
                         </span>
                       ) : (
@@ -239,7 +239,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
 
                     {/* Price in Verde Ottanio */}
                     <div className="mt-2 flex items-baseline gap-1">
-                      <span className="text-2xl font-black text-[#0D7480]">
+                      <span className="text-2xl font-black text-[var(--color-petrolio-600)]">
                         {pkg.priceDisplay}
                       </span>
                       <span className="text-[11px] font-medium text-slate-500">
@@ -257,7 +257,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                       {isHighlight ? (
                         <button
                           onClick={() => handleBuy(pkg)}
-                          className="w-full py-2.5 px-3 bg-[#701542] hover:bg-[#8D1B54] text-white rounded-xl text-xs font-black transition-all shadow-sm shadow-[#701542]/20 hover:shadow active:scale-98 flex items-center justify-center gap-1.5 cursor-pointer group"
+                          className="w-full py-2.5 px-3 bg-[var(--color-brand-700)] hover:bg-[var(--color-brand-700)] text-white rounded-xl text-xs font-black transition-all shadow-sm shadow-[var(--color-brand-700)]/20 hover:shadow active:scale-98 flex items-center justify-center gap-1.5 cursor-pointer group"
                         >
                           <span>Acquista</span>
                           <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -265,10 +265,10 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                       ) : (
                         <button
                           onClick={() => handleBuy(pkg)}
-                          className="w-full py-2.5 px-3 bg-white hover:bg-slate-50 text-slate-800 hover:text-[#0D7480] border border-slate-200 hover:border-[#0D7480] rounded-xl text-xs font-bold transition-all active:scale-98 flex items-center justify-center gap-1.5 cursor-pointer group"
+                          className="w-full py-2.5 px-3 bg-white hover:bg-slate-50 text-slate-800 hover:text-[var(--color-petrolio-600)] border border-slate-200 hover:border-[var(--color-petrolio-600)] rounded-xl text-xs font-bold transition-all active:scale-98 flex items-center justify-center gap-1.5 cursor-pointer group"
                         >
                           <span>Acquista</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0D7480] group-hover:translate-x-0.5 transition-transform" />
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[var(--color-petrolio-600)] group-hover:translate-x-0.5 transition-transform" />
                         </button>
                       )}
                     </div>
@@ -291,7 +291,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-700 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15 font-semibold text-slate-900' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15 font-semibold text-slate-900' : ''
                   }`}
                 >
                   {pkg.validity}
@@ -309,11 +309,11 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-800 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15 font-bold text-[#701542]' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15 font-bold text-[var(--color-brand-700)]' : ''
                   }`}
                 >
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                     <span>{pkg.entriesCount}</span>
                   </span>
                 </td>
@@ -329,11 +329,11 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
               {PACKAGES_DATA.map((pkg) => (
                 <td 
                   key={pkg.id} 
-                  className={`p-3.5 ${pkg.isPopular ? 'bg-[#FAF0F4]/15' : ''}`}
+                  className={`p-3.5 ${pkg.isPopular ? 'bg-[var(--color-brand-50)]/15' : ''}`}
                 >
                   {pkg.isFamilyShareable ? (
                     <div className="flex items-center gap-1.5 text-slate-800 font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                       <span>Fratelli &amp; Genitori</span>
                     </div>
                   ) : (
@@ -356,12 +356,12 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-700 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15 font-semibold text-slate-900' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15 font-semibold text-slate-900' : ''
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
                     {pkg.priorityBooking !== 'Standard' ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                     ) : (
                       <span className="w-3.5 h-3.5 text-center text-slate-300">•</span>
                     )}
@@ -381,11 +381,11 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-700 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15 font-semibold text-slate-900' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15 font-semibold text-slate-900' : ''
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                     <span>{pkg.cancellation}</span>
                   </div>
                 </td>
@@ -402,11 +402,11 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-700 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15' : ''
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                     <span className="line-clamp-2">{pkg.includedAmenities}</span>
                   </div>
                 </td>
@@ -423,11 +423,11 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 <td 
                   key={pkg.id} 
                   className={`p-3.5 text-slate-700 font-medium ${
-                    pkg.isPopular ? 'bg-[#FAF0F4]/15 font-semibold text-[#701542]' : ''
+                    pkg.isPopular ? 'bg-[var(--color-brand-50)]/15 font-semibold text-[var(--color-brand-700)]' : ''
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7480] shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-petrolio-600)] shrink-0" />
                     <span>{pkg.welcomeKit}</span>
                   </div>
                 </td>
@@ -445,12 +445,12 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
               {PACKAGES_DATA.map((pkg) => (
                 <td 
                   key={pkg.id} 
-                  className={`p-3 ${pkg.isPopular ? 'bg-[#FAF0F4]/30' : ''}`}
+                  className={`p-3 ${pkg.isPopular ? 'bg-[var(--color-brand-50)]/30' : ''}`}
                 >
                   {pkg.isPopular ? (
                     <button
                       onClick={() => handleBuy(pkg)}
-                      className="w-full py-2 px-3 bg-[#701542] hover:bg-[#8D1B54] text-white rounded-lg text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1"
+                      className="w-full py-2 px-3 bg-[var(--color-brand-700)] hover:bg-[var(--color-brand-700)] text-white rounded-lg text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1"
                     >
                       <span>Acquista</span>
                       <ChevronRight className="w-3 h-3" />
@@ -482,19 +482,19 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
           return (
             <div className={`p-4 rounded-2xl border transition-all ${
               isHighlight 
-                ? 'border-2 border-[#701542] bg-[#FAF0F4]/40 shadow-sm' 
+                ? 'border-2 border-[var(--color-brand-700)] bg-[var(--color-brand-50)]/40 shadow-sm' 
                 : 'border-slate-200 bg-white shadow-2xs'
             }`}>
               
               {/* Top Banner on Mobile */}
               <div className="flex items-center justify-between mb-2">
                 {isHighlight ? (
-                  <span className="bg-[#FAF0F4] text-[#701542] border border-[#701542]/30 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
-                    <Sparkles className="w-3 h-3 text-[#701542]" />
+                  <span className="bg-[var(--color-brand-50)] text-[var(--color-brand-700)] border border-[var(--color-brand-700)]/30 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-[var(--color-brand-700)]" />
                     PIÙ SCELTO DALLE MAMME
                   </span>
                 ) : pkg.savingsBadge ? (
-                  <span className="bg-[#FAF0F4] text-[#701542] text-[10px] font-bold px-2 py-0.5 rounded-md border border-[#701542]/20">
+                  <span className="bg-[var(--color-brand-50)] text-[var(--color-brand-700)] text-[10px] font-bold px-2 py-0.5 rounded-md border border-[var(--color-brand-700)]/20">
                     {pkg.savingsBadge}
                   </span>
                 ) : (
@@ -502,7 +502,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                     Tariffa Flessibile
                   </span>
                 )}
-                <span className="text-xs font-extrabold text-[#0D7480]">
+                <span className="text-xs font-extrabold text-[var(--color-petrolio-600)]">
                   {pkg.perEntryPrice}
                 </span>
               </div>
@@ -513,7 +513,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                   {pkg.name}
                 </h3>
                 <div className="text-right">
-                  <span className="text-2xl font-black text-[#0D7480]">
+                  <span className="text-2xl font-black text-[var(--color-petrolio-600)]">
                     {pkg.priceDisplay}
                   </span>
                   <span className="text-xs text-slate-500 font-medium ml-1">
@@ -525,27 +525,27 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
               {/* Feature Checklist */}
               <div className="py-3 space-y-2.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Validità:</strong> {pkg.validity}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Ingressi:</strong> {pkg.entriesCount}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Condivisione:</strong> {pkg.isFamilyShareable ? 'Sì, tutta la famiglia' : 'Nominale singolo'}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Priorità:</strong> {pkg.priorityBooking}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Cancellazione:</strong> {pkg.cancellation}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7480] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--color-petrolio-600)] shrink-0" />
                   <span><strong>Extra:</strong> {pkg.welcomeKit}</span>
                 </div>
               </div>
@@ -555,7 +555,7 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 {isHighlight ? (
                   <button
                     onClick={() => handleBuy(pkg)}
-                    className="w-full py-3 bg-[#701542] hover:bg-[#8D1B54] text-white rounded-xl text-xs font-black shadow-md shadow-[#701542]/20 flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-98"
+                    className="w-full py-3 bg-[var(--color-brand-700)] hover:bg-[var(--color-brand-700)] text-white rounded-xl text-xs font-black shadow-md shadow-[var(--color-brand-700)]/20 flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-98"
                   >
                     <span>Acquista a {pkg.priceDisplay}</span>
                     <ChevronRight className="w-4 h-4" />
@@ -563,10 +563,10 @@ export const PackageComparisonTable: React.FC<PackageComparisonTableProps> = ({
                 ) : (
                   <button
                     onClick={() => handleBuy(pkg)}
-                    className="w-full py-3 bg-white hover:bg-slate-50 text-slate-900 border border-[#0D7480] rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-98"
+                    className="w-full py-3 bg-white hover:bg-slate-50 text-slate-900 border border-[var(--color-petrolio-600)] rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-98"
                   >
                     <span>Acquista a {pkg.priceDisplay}</span>
-                    <ChevronRight className="w-4 h-4 text-[#0D7480]" />
+                    <ChevronRight className="w-4 h-4 text-[var(--color-petrolio-600)]" />
                   </button>
                 )}
               </div>

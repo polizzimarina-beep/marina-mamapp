@@ -1,15 +1,35 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-magenta-dark: #701542;
-    --color-magenta-accent: #8D1B54;
-    --color-magenta-light: #FDF2F8;
-    --color-ottanio-dark: #0B434C;
-    --color-ottanio-accent: #0D7480;
-    --color-ottanio-light: #EBF6F7;
-    --color-ottanio-mint: #2DD4BF;
-  }
+/*
+ * PALETTE MAMAPP — unico punto in cui si definiscono i colori del brand.
+ * Per cambiare un colore in tutta l'app basta modificarlo qui.
+ *  - brand    = magenta / rosa-lampone elegante (pulsanti, elementi attivi, pin)
+ *  - petrolio = blu petrolio / teal profondo (logo, titoli, icone)
+ * Si usano come classi Tailwind (es. bg-brand-600, text-petrolio-700)
+ * oppure come variabili CSS (es. var(--color-brand-600)).
+ */
+@theme {
+  --color-brand-50: #FDF2F6;
+  --color-brand-100: #FBE4EE;
+  --color-brand-200: #F7C6DA;
+  --color-brand-300: #F09BBE;
+  --color-brand-400: #E36A9C;
+  --color-brand-500: #CF3F7A;
+  --color-brand-600: #B81D5B;
+  --color-brand-700: #9C1A4E;
+  --color-brand-800: #801843;
+  --color-brand-900: #66163A;
+
+  --color-petrolio-50: #EBF6F7;
+  --color-petrolio-100: #D2ECEE;
+  --color-petrolio-200: #A6D8DC;
+  --color-petrolio-300: #6FBEC5;
+  --color-petrolio-400: #3A9FA8;
+  --color-petrolio-500: #168893;
+  --color-petrolio-600: #0D7480;
+  --color-petrolio-700: #0B5F69;
+  --color-petrolio-800: #0B4C54;
+  --color-petrolio-900: #0B3F46;
 }
 
 /* Bottom Sheet & Backdrop CSS Animations */

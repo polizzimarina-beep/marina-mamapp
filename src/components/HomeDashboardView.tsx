@@ -52,10 +52,10 @@ interface HomeDashboardViewProps {
 }
 
 // Colori ufficiali del Brand Mamapp
-const COLOR_RASPBERRY = '#B81D5B';
-const COLOR_RASPBERRY_HOVER = '#A3154E';
+const COLOR_RASPBERRY = 'var(--color-brand-600)';
+const COLOR_RASPBERRY_HOVER = 'var(--color-brand-700)';
 const COLOR_RASPBERRY_BG_TINT = '#FDF2F6';
-const COLOR_RASPBERRY_BORDER = '#FBCFE8';
+const COLOR_RASPBERRY_BORDER = 'var(--color-brand-200)';
 
 export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
   activities = [],
@@ -99,10 +99,10 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       id: 'creativi',
       label: 'Creativi',
       icon: Palette,
-      bg: 'bg-[#FFF0F5]',
-      border: 'border-[#FCD3E1]',
-      text: 'text-[#B81D5B]',
-      activeRing: 'ring-[#B81D5B]'
+      bg: 'bg-[var(--color-brand-50)]',
+      border: 'border-[var(--color-brand-200)]',
+      text: 'text-[var(--color-brand-600)]',
+      activeRing: 'ring-[var(--color-brand-600)]'
     },
     {
       id: 'parchi',
@@ -117,10 +117,10 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       id: 'sport',
       label: 'Sport',
       icon: Waves,
-      bg: 'bg-[#E0F2FE]',
-      border: 'border-[#BAE6FD]',
-      text: 'text-[#0284C7]',
-      activeRing: 'ring-[#0284C7]'
+      bg: 'bg-[var(--color-petrolio-50)]',
+      border: 'border-[var(--color-petrolio-200)]',
+      text: 'text-[var(--color-petrolio-600)]',
+      activeRing: 'ring-[var(--color-petrolio-600)]'
     },
     {
       id: 'spazi',
@@ -329,7 +329,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
     switch (badgeType) {
       case 'creativi':
         return {
-          pill: 'bg-[#FFF0F5] text-[#B81D5B] border border-[#FCD3E1]',
+          pill: 'bg-[var(--color-brand-50)] text-[var(--color-brand-600)] border border-[var(--color-brand-200)]',
           icon: Palette
         };
       case 'parchi':
@@ -339,7 +339,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
         };
       case 'sport':
         return {
-          pill: 'bg-[#E0F2FE] text-[#0284C7] border border-[#BAE6FD]',
+          pill: 'bg-[var(--color-petrolio-50)] text-[var(--color-petrolio-600)] border border-[var(--color-petrolio-200)]',
           icon: Waves
         };
       case 'spazi':
@@ -354,7 +354,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
         };
       default:
         return {
-          pill: 'bg-[#FFF0F5] text-[#B81D5B] border border-[#FCD3E1]',
+          pill: 'bg-[var(--color-brand-50)] text-[var(--color-brand-600)] border border-[var(--color-brand-200)]',
           icon: Sparkles
         };
     }
@@ -440,7 +440,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       {/* - Frecce laterali trasparenti minimali                                    */}
       {/* - Indicatori a pallini di navigazione in basso                             */}
       {/* - Esclusivamente bambini felici (zero adulti)                             */}
-      {/* - CTA e badge in magenta / rosa-lampone elegante e profondo (#B81D5B)     */}
+      {/* - CTA e badge in magenta / rosa-lampone elegante e profondo (var(--color-brand-600))     */}
       {/* ========================================================================= */}
       <section className="relative">
         <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-100 min-h-[200px] sm:min-h-[225px] flex flex-col justify-between p-5 sm:p-6 text-white select-none bg-slate-900">
@@ -596,7 +596,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                   {/* Titolo attività */}
                   <h4 
                     style={{ color: '#0F172A' }}
-                    className="font-extrabold text-sm sm:text-base group-hover:text-[#B81D5B] transition-colors leading-snug truncate"
+                    className="font-extrabold text-sm sm:text-base group-hover:text-[var(--color-brand-600)] transition-colors leading-snug truncate"
                   >
                     {act.title}
                   </h4>
@@ -657,7 +657,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                     e.stopPropagation();
                     onToggleFavorite(act.id, e);
                   }}
-                  className="absolute top-3.5 right-3.5 p-1 text-slate-400 hover:text-[#B81D5B] transition-colors cursor-pointer"
+                  className="absolute top-3.5 right-3.5 p-1 text-slate-400 hover:text-[var(--color-brand-600)] transition-colors cursor-pointer"
                   title="Preferiti"
                   aria-label="Preferiti"
                 >

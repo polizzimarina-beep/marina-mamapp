@@ -25,7 +25,7 @@ export const AGE_BRACKETS: AgeBracketInfo[] = [
     sub: 'Scuola Primaria',
     range: [6, 10],
     icon: 'Puzzle',
-    badgeColor: 'bg-sky-50 text-sky-800 border-sky-200 hover:bg-sky-100',
+    badgeColor: 'bg-petrolio-50 text-petrolio-800 border-petrolio-200 hover:bg-petrolio-100',
     description: 'LEGO Robotics, scuola vela Optimist, go-kart e cucina siciliana'
   },
   {
@@ -71,8 +71,8 @@ export const CATEGORIES: Category[] = [
     id: 'yoga',
     name: 'Yoga & Wellness Mamme',
     iconName: 'HeartHandshake',
-    color: '#EC4899',
-    bgGradient: 'from-pink-500 to-rose-600',
+    color: 'var(--color-brand-600)',
+    bgGradient: 'from-brand-500 to-brand-600',
     count: 12,
     description: 'Yoga post-parto, pilates e mindfulness per madri e neo-mamme'
   },
@@ -80,7 +80,7 @@ export const CATEGORIES: Category[] = [
     id: 'gokart',
     name: 'Go-Kart & Motori',
     iconName: 'Car',
-    color: '#E11D48',
+    color: 'var(--color-brand-600)',
     bgGradient: 'from-red-500 to-orange-600',
     count: 6,
     description: 'Sfide go-kart, simulatori di guida e minimoto per papà e ragazzi'
@@ -89,8 +89,8 @@ export const CATEGORIES: Category[] = [
     id: 'mare',
     name: 'Spot Mare Organizzati',
     iconName: 'Sun',
-    color: '#0284C7',
-    bgGradient: 'from-sky-400 to-blue-600',
+    color: 'var(--color-petrolio-600)',
+    bgGradient: 'from-petrolio-400 to-blue-600',
     count: 15,
     description: 'Spiagge attrezzate a Mondello, solarium baby e sup per famiglie'
   },
@@ -98,7 +98,7 @@ export const CATEGORIES: Category[] = [
     id: 'piscina',
     name: 'Piscine & Nuoto Baby',
     iconName: 'Waves',
-    color: '#06B6D4',
+    color: 'var(--color-petrolio-500)',
     bgGradient: 'from-cyan-500 to-blue-600',
     count: 10,
     description: 'Acquaticità neonatale, corsi di nuoto e giochi in acqua riscaldata'
@@ -125,8 +125,8 @@ export const CATEGORIES: Category[] = [
     id: 'musica',
     name: 'Musica & Propedeutica',
     iconName: 'Music',
-    color: '#D946EF',
-    bgGradient: 'from-fuchsia-500 to-pink-600',
+    color: 'var(--color-brand-600)',
+    bgGradient: 'from-brand-500 to-brand-600',
     count: 10,
     description: 'Propedeutica musicale, pianoforte, chitarra baby e canto per bambini'
   },
@@ -143,8 +143,8 @@ export const CATEGORIES: Category[] = [
     id: 'cinema',
     name: 'Cinema & Film Bimbi',
     iconName: 'Film',
-    color: '#E11D48',
-    bgGradient: 'from-rose-500 to-pink-600',
+    color: 'var(--color-brand-600)',
+    bgGradient: 'from-brand-500 to-brand-600',
     count: 7,
     description: 'Rassegne di film per famiglie, cartoni animati al cinema e cineforum kids'
   },
@@ -179,8 +179,8 @@ export const CATEGORIES: Category[] = [
     id: 'trasporti',
     name: 'Mappa & Trasporti',
     iconName: 'MapPin',
-    color: '#0284C7',
-    bgGradient: 'from-sky-500 to-blue-600',
+    color: 'var(--color-petrolio-600)',
+    bgGradient: 'from-petrolio-500 to-blue-600',
     count: 5,
     description: 'Navette family friendly, bus panoramici, trenino di Mondello e mappa interattiva'
   }
@@ -192,7 +192,7 @@ export const MOCK_FAMILY_MEMBERS: FamilyMemberProfile[] = [
     name: 'Marina (Mamma)',
     role: 'mamma',
     avatar: '👩',
-    color: 'bg-pink-100 text-pink-700 border-pink-300'
+    color: 'bg-brand-100 text-brand-700 border-brand-300'
   },
   {
     id: 'fam-2',
@@ -2135,7 +2135,7 @@ export const PROMO_BANNERS = [
     title: 'Speciale Mamme & Yoga',
     subtitle: 'Prima lezione di prova GRATIS al Parco della Favorita',
     badge: 'PROVA GRATIS',
-    bgGradient: 'from-pink-500 via-rose-500 to-purple-600',
+    bgGradient: 'from-brand-500 via-brand-500 to-purple-600',
     textColor: 'text-white',
     image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=500&q=80',
     tag: 'Senza Impegno'

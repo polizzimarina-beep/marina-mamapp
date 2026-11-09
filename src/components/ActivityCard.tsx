@@ -25,8 +25,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
     if (text.includes('fasciatoio') || text.includes('neonat') || text.includes('baby') || activity.categoryId === 'indoor' || activity.categoryId === 'yoga') {
       salvaMamma.push({
         label: 'Fasciatoio',
-        icon: <Baby className="w-3 h-3 text-pink-500" />,
-        color: 'bg-pink-50 text-pink-700 border-pink-200'
+        icon: <Baby className="w-3 h-3 text-brand-500" />,
+        color: 'bg-brand-50 text-brand-700 border-brand-200'
       });
     }
 
@@ -41,8 +41,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
     if (text.includes('passeggin') || text.includes('accessibil') || text.includes('strada') || activity.categoryId === 'concerti' || activity.categoryId === 'ristoranti') {
       salvaMamma.push({
         label: 'Passeggino ok',
-        icon: <Baby className="w-3 h-3 text-sky-500" />,
-        color: 'bg-sky-50 text-sky-700 border-sky-200'
+        icon: <Baby className="w-3 h-3 text-petrolio-500" />,
+        color: 'bg-petrolio-50 text-petrolio-700 border-petrolio-200'
       });
     }
 
@@ -58,13 +58,13 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
     if (salvaMamma.length === 0) {
       salvaMamma.push({
         label: 'Passeggino ok',
-        icon: <Baby className="w-3 h-3 text-sky-500" />,
-        color: 'bg-sky-50 text-sky-700 border-sky-200'
+        icon: <Baby className="w-3 h-3 text-petrolio-500" />,
+        color: 'bg-petrolio-50 text-petrolio-700 border-petrolio-200'
       });
       salvaMamma.push({
         label: 'Fasciatoio',
-        icon: <Baby className="w-3 h-3 text-pink-500" />,
-        color: 'bg-pink-50 text-pink-700 border-pink-200'
+        icon: <Baby className="w-3 h-3 text-brand-500" />,
+        color: 'bg-brand-50 text-brand-700 border-brand-200'
       });
     }
 
@@ -92,8 +92,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           onClick={(e) => onToggleFavorite(activity.id, e)}
           className={`absolute top-1.5 right-1.5 w-7 h-7 rounded-full flex items-center justify-center backdrop-blur-md transition-all shadow-xs z-10 cursor-pointer ${
             isFavorite 
-              ? 'bg-pink-500 text-white' 
-              : 'bg-white/80 text-slate-700 hover:bg-white hover:text-pink-500'
+              ? 'bg-brand-500 text-white' 
+              : 'bg-white/80 text-slate-700 hover:bg-white hover:text-brand-500'
           }`}
           title={isFavorite ? 'Rimuovi dai preferiti' : 'Salva nei preferiti'}
         >
@@ -119,7 +119,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           </div>
 
           {/* Title (max 2 lines) */}
-          <h3 className="font-extrabold text-slate-900 text-xs sm:text-sm leading-snug group-hover:text-pink-600 line-clamp-2 transition-colors mb-1">
+          <h3 className="font-extrabold text-slate-900 text-xs sm:text-sm leading-snug group-hover:text-brand-600 line-clamp-2 transition-colors mb-1">
             {activity.title}
           </h3>
 
@@ -150,7 +150,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
               {activity.price === 0 ? (
                 <span className="text-emerald-600 font-extrabold">Gratuito</span>
               ) : (
-                <span className="text-pink-600">{activity.price} €</span>
+                <span className="text-brand-600">{activity.price} €</span>
               )}
             </span>
           </div>

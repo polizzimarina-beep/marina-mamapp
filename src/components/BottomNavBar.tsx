@@ -31,7 +31,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
         >
           {activeTab === 'home' ? (
             <div 
-              style={{ backgroundColor: '#B81D5B' }}
+              style={{ backgroundColor: 'var(--color-brand-600)' }}
               className="w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform"
             >
               <Home className="w-4 h-4 text-white stroke-[2.4]" />
@@ -42,7 +42,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
             </div>
           )}
           <span 
-            style={{ color: activeTab === 'home' ? '#B81D5B' : undefined }}
+            style={{ color: activeTab === 'home' ? 'var(--color-brand-600)' : undefined }}
             className={`text-[10px] leading-tight mt-0.5 ${activeTab === 'home' ? 'font-bold' : 'text-slate-500 font-medium'}`}
           >
             Home
@@ -55,12 +55,12 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
           onClick={() => onChangeTab('explore')}
           className={`flex-1 py-1.5 px-2.5 sm:px-3 rounded-full flex flex-col items-center justify-center transition-all cursor-pointer ${
             activeTab === 'explore'
-              ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold shadow-2xs border border-[#FBCFE8]/80 ring-1 ring-[#B81D5B]/20'
+              ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold shadow-2xs border border-[var(--color-brand-200)]/80 ring-1 ring-[var(--color-brand-600)]/20'
               : 'text-slate-500 hover:text-slate-800 font-medium'
           }`}
         >
           <MapPin 
-            className={`w-5 h-5 ${activeTab === 'explore' ? 'stroke-[#B81D5B] fill-[#B81D5B]/20' : 'stroke-current'}`} 
+            className={`w-5 h-5 ${activeTab === 'explore' ? 'stroke-[var(--color-brand-600)] fill-[var(--color-brand-600)]/20' : 'stroke-current'}`} 
             strokeWidth={activeTab === 'explore' ? 2.2 : 1.8} 
           />
           <span className="text-[10px] sm:text-[11px] leading-tight mt-0.5">Mappa</span>
@@ -72,12 +72,12 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
           onClick={() => onChangeTab('planning')}
           className={`flex-1 py-1.5 px-2.5 sm:px-3 rounded-full flex flex-col items-center justify-center transition-all cursor-pointer ${
             activeTab === 'planning'
-              ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold shadow-2xs border border-[#FBCFE8]/80 ring-1 ring-[#B81D5B]/20'
+              ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold shadow-2xs border border-[var(--color-brand-200)]/80 ring-1 ring-[var(--color-brand-600)]/20'
               : 'text-slate-500 hover:text-slate-800 font-medium'
           }`}
         >
           <Calendar 
-            className={`w-5 h-5 ${activeTab === 'planning' ? 'stroke-[#B81D5B]' : 'stroke-current'}`} 
+            className={`w-5 h-5 ${activeTab === 'planning' ? 'stroke-[var(--color-brand-600)]' : 'stroke-current'}`} 
             strokeWidth={activeTab === 'planning' ? 2.2 : 1.8} 
           />
           <span className="text-[10px] sm:text-[11px] leading-tight mt-0.5">Calendario</span>
@@ -89,17 +89,17 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
           onClick={() => onChangeTab('favorites')}
           className={`flex-1 py-1.5 px-3 rounded-full flex flex-col items-center justify-center transition-all cursor-pointer relative ${
             activeTab === 'favorites'
-              ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold shadow-2xs border border-[#FBCFE8]/60'
+              ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold shadow-2xs border border-[var(--color-brand-200)]/60'
               : 'text-slate-500 hover:text-slate-800 font-medium'
           }`}
         >
           <div className="relative">
             <Heart 
-              className={`w-5 h-5 ${activeTab === 'favorites' ? 'fill-[#B81D5B] stroke-[#B81D5B]' : 'stroke-current'}`} 
+              className={`w-5 h-5 ${activeTab === 'favorites' ? 'fill-[var(--color-brand-600)] stroke-[var(--color-brand-600)]' : 'stroke-current'}`} 
               strokeWidth={activeTab === 'favorites' ? 2.2 : 1.8} 
             />
             {favoritesCount > 0 && (
-              <span className="absolute -top-1 -right-2.5 w-4 h-4 rounded-full bg-[#B81D5B] text-white text-[9px] font-black flex items-center justify-center ring-2 ring-white">
+              <span className="absolute -top-1 -right-2.5 w-4 h-4 rounded-full bg-[var(--color-brand-600)] text-white text-[9px] font-black flex items-center justify-center ring-2 ring-white">
                 {favoritesCount}
               </span>
             )}
@@ -113,17 +113,17 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
           onClick={() => onChangeTab('tickets')}
           className={`flex-1 py-1.5 px-3 rounded-full flex flex-col items-center justify-center transition-all cursor-pointer relative ${
             activeTab === 'tickets'
-              ? 'bg-[#FDF2F6] text-[#B81D5B] font-bold shadow-2xs border border-[#FBCFE8]/60'
+              ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] font-bold shadow-2xs border border-[var(--color-brand-200)]/60'
               : 'text-slate-500 hover:text-slate-800 font-medium'
           }`}
         >
           <div className="relative">
             <Ticket 
-              className={`w-5 h-5 ${activeTab === 'tickets' ? 'stroke-[#B81D5B]' : 'stroke-current'}`} 
+              className={`w-5 h-5 ${activeTab === 'tickets' ? 'stroke-[var(--color-brand-600)]' : 'stroke-current'}`} 
               strokeWidth={activeTab === 'tickets' ? 2.2 : 1.8} 
             />
             {ticketsCount > 0 && (
-              <span className="absolute -top-1 -right-2.5 w-4 h-4 rounded-full bg-[#B81D5B] text-white text-[9px] font-black flex items-center justify-center ring-2 ring-white">
+              <span className="absolute -top-1 -right-2.5 w-4 h-4 rounded-full bg-[var(--color-brand-600)] text-white text-[9px] font-black flex items-center justify-center ring-2 ring-white">
                 {ticketsCount}
               </span>
             )}

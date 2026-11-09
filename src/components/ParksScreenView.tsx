@@ -18,8 +18,8 @@ import {
 import { Activity } from '../types';
 
 // Colore di Brand Ufficiale Magenta Scuro / Rosa-lampone elegante e profondo
-export const COLOR_MAGENTA_SCURO = '#B81D5B';
-export const COLOR_MAGENTA_SCURO_HOVER = '#A3154E';
+export const COLOR_MAGENTA_SCURO = 'var(--color-brand-600)';
+export const COLOR_MAGENTA_SCURO_HOVER = 'var(--color-brand-700)';
 
 export interface CategoryItemDetail {
   id: string;
@@ -1028,7 +1028,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={`Cerca in ${currentConfig.title.toLowerCase()}...`}
-                className="w-full bg-white/95 backdrop-blur-md border border-white rounded-full py-2 pl-9 pr-9 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#B81D5B]"
+                className="w-full bg-white/95 backdrop-blur-md border border-white rounded-full py-2 pl-9 pr-9 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-600)]"
                 autoFocus
               />
               {searchQuery && (
@@ -1085,7 +1085,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                   onClick={() => handleSwitchCategory(catTab.id as any)}
                   className={`text-[11px] font-bold px-3 py-1 rounded-full transition-all cursor-pointer flex items-center gap-1 shrink-0 ${
                     isCurrent
-                      ? 'bg-[#FDF2F6] text-[#B81D5B] border border-[#FBCFE8]'
+                      ? 'bg-[#FDF2F6] text-[var(--color-brand-600)] border border-[var(--color-brand-200)]'
                       : 'text-slate-500 hover:text-slate-800 bg-slate-50'
                   }`}
                 >
@@ -1100,7 +1100,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
         {/* ========================================================================= */}
         {/* 3. PILLOLE SOTTOCATEGORIE:                                                */}
         {/* - Riga orizzontale scorrevole                                             */}
-        {/* - Pulsante attivo "Tutti" con sfondo magenta/rosa-lampone elegante (#B81D5B)*/}
+        {/* - Pulsante attivo "Tutti" con sfondo magenta/rosa-lampone elegante (var(--color-brand-600))*/}
         {/* - Pulsanti inattivi grigio chiaro con testo scuro                         */}
         {/* ========================================================================= */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1.5">
@@ -1177,7 +1177,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                 <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
                   <div>
                     {/* Titolo in grassetto scuro */}
-                    <h2 className="font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-[#B81D5B] transition-colors leading-snug truncate">
+                    <h2 className="font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-[var(--color-brand-600)] transition-colors leading-snug truncate">
                       {item.name}
                     </h2>
 
@@ -1208,7 +1208,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                     type="button"
                     onClick={(e) => handleToggleFavorite(item.id, e)}
                     aria-label={isFav ? `Rimuovi ${item.name} dai preferiti` : `Aggiungi ${item.name} ai preferiti`}
-                    className="p-1 text-slate-400 hover:text-[#B81D5B] transition-colors cursor-pointer"
+                    className="p-1 text-slate-400 hover:text-[var(--color-brand-600)] transition-colors cursor-pointer"
                   >
                     <Heart 
                       style={isFav ? { fill: COLOR_MAGENTA_SCURO, color: COLOR_MAGENTA_SCURO } : undefined}
@@ -1275,7 +1275,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
 
               {/* Titolo e posizione */}
               <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#B81D5B] text-white px-2 py-0.5 rounded-full mb-1.5 inline-block">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-[var(--color-brand-600)] text-white px-2 py-0.5 rounded-full mb-1.5 inline-block">
                   {currentConfig.title}
                 </span>
                 <h2 className="text-xl sm:text-2xl font-black leading-tight drop-shadow-sm">
@@ -1298,7 +1298,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                   </span>
                 ))}
                 {selectedItemForDetail.price && (
-                  <span className="bg-[#FDF2F6] text-[#B81D5B] font-extrabold text-xs px-3 py-1 rounded-full border border-pink-100">
+                  <span className="bg-[#FDF2F6] text-[var(--color-brand-600)] font-extrabold text-xs px-3 py-1 rounded-full border border-brand-100">
                     {selectedItemForDetail.price}
                   </span>
                 )}
@@ -1323,7 +1323,7 @@ export const ParksScreenView: React.FC<ParksScreenViewProps> = ({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedItemForDetail.services.map((srv, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 bg-slate-50 p-2 rounded-xl border border-slate-100">
-                        <Check className="w-3.5 h-3.5 text-[#B81D5B] shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[var(--color-brand-600)] shrink-0" />
                         <span>{srv}</span>
                       </div>
                     ))}
