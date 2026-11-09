@@ -67,6 +67,7 @@ import {
 } from './types';
 import { Sparkles, Heart, Search, Building2, CheckCircle2, ChevronRight, ShieldCheck, Baby, MapPin, Clock } from 'lucide-react';
 
+import { ILLUSTRAZIONI } from './data/illustrazioni';
 export default function App() {
   // State variables
   const [selectedZones, setSelectedZones] = useState<string[]>([]);
@@ -191,8 +192,8 @@ export default function App() {
           id: 'org-custom',
           name: String(organizerIdentifier),
           category: 'Organizzatore Verificato Palermo',
-          logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
-          coverImage: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80',
+          logo: ILLUSTRAZIONI.profilo,
+          coverImage: ILLUSTRAZIONI.bannerCitta,
           description: `Organizzatore accreditato di eventi, spettacoli e attività sportive per la famiglia a Palermo.`,
           address: 'Palermo Centro',
           city: 'Palermo',

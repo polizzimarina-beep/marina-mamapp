@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E6F4F6"/>
+      <stop offset="1" stop-color="#FDF1F6"/>
+    </linearGradient>
+    <filter id="acquerello" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="4" result="rumore"/>
+      <feDisplacementMap in="SourceGraphic" in2="rumore" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="carta">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.30  0 0 0 0 0.38  0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#cielo)"/>
+  <g filter="url(#acquerello)">
+<path d="M170 140 L330 100 L470 140 L630 100 L630 470 L470 510 L330 470 L170 510 Z" fill="#FFFFFF"/><path d="M330 100 L330 470 M470 140 L470 510" stroke="#E3D6EA" stroke-width="4"/><path d="M190 380 C 260 300 330 360 400 280 S 540 230 610 180" stroke="#0D7480" stroke-width="6" fill="none" stroke-dasharray="14 12"/><circle cx="250" cy="220" r="40" fill="#BFE6D3"/><path d="M520 380 C 560 350 600 400 620 360 L620 460 L520 460 Z" fill="#CFEAF0"/><circle cx="230" cy="300" r="7" fill="#FFD27A"/><circle cx="560" cy="250" r="7" fill="#E43B80"/><circle cx="300" cy="420" r="7" fill="#B596C0"/><path d="M400 300 C 360 240 340 210 340 180 C 340 145 367 120 400 120 C 433 120 460 145 460 180 C 460 210 440 240 400 300 Z" fill="#E43B80"/><circle cx="400" cy="180" r="22" fill="#FFFFFF"/><g opacity="1.0"><path d="M 106.4 468.0 L 84.0 524.0" stroke="#0D7480" stroke-width="17.0" stroke-linecap="round" fill="none"/><path d="M 173.6 468.0 L 208.0 424.0" stroke="#0D7480" stroke-width="17.0" stroke-linecap="round" fill="none"/><path d="M 100.0 480.0 Q 100.0 456.0 140.0 456.0 Q 180.0 456.0 180.0 480.0 C 180.0 540.0 152.0 590.0 140.0 590.0 C 128.0 590.0 100.0 540.0 100.0 480.0 Z" fill="#0D7480"/><circle cx="140.0" cy="418.0" r="28.0" fill="#0D7480"/></g><g opacity="1.0"><path d="M 626.4 468.0 L 592.0 424.0" stroke="#B596C0" stroke-width="17.0" stroke-linecap="round" fill="none"/><path d="M 693.6 468.0 L 728.0 424.0" stroke="#B596C0" stroke-width="17.0" stroke-linecap="round" fill="none"/><path d="M 620.0 480.0 Q 620.0 456.0 660.0 456.0 Q 700.0 456.0 700.0 480.0 C 700.0 540.0 672.0 590.0 660.0 590.0 C 648.0 590.0 620.0 540.0 620.0 480.0 Z" fill="#B596C0"/><circle cx="660.0" cy="418.0" r="28.0" fill="#B596C0"/></g>
+  </g>
+  <rect width="800" height="600" filter="url(#carta)"/>
+</svg>

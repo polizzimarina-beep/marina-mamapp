@@ -17,6 +17,7 @@ import {
 import { Activity } from '../types';
 import { ParksFilterModal } from './ParksFilterModal';
 
+import { ILLUSTRAZIONI } from '../data/illustrazioni';
 interface HomeDashboardViewProps {
   activities: Activity[];
   favorites: string[];
@@ -165,7 +166,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       ctaText: 'Prenota Ora',
       badge: 'In Evidenza Oggi',
       // Foto di bambina felice che dipinge con pennelli e colori (solo bambini, zero adulti)
-      image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1000&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.creativi,
       action: () => {
         const act = activities.find(a => a.id === 'act-artisti') || activities[0];
         if (act && onBookActivity) onBookActivity(act);
@@ -179,7 +180,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       ctaText: 'Scopri i Parchi',
       badge: 'Parchi & Natura',
       // Foto di bambini felici che corrono e giocano sul prato verde (solo bambini, zero adulti)
-      image: 'https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1000&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.bannerMappa,
       action: () => {
         if (onNavigateToParks) onNavigateToParks();
         else setIsParksModalOpen(true);
@@ -192,7 +193,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       ctaText: 'Prenota Ora',
       badge: 'Nuoto Baby',
       // Foto di bimbo felice con braccioli che sorride in acqua (solo bambini, zero adulti)
-      image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1000&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.nuoto,
       action: () => {
         const act = activities.find(a => a.id === 'act-acquaticita') || activities[1];
         if (act && onBookActivity) onBookActivity(act);
@@ -206,7 +207,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       ctaText: 'Iscrivi Subito',
       badge: 'Sport di Squadra',
       // Foto di bambino sorridente con pallone sul campo da gioco (solo bambini, zero adulti)
-      image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=1000&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.sport,
       action: () => {
         const act = activities.find(a => a.id === 'act-mini-calcio') || activities[2];
         if (act && onBookActivity) onBookActivity(act);
@@ -245,7 +246,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       venueName: 'Mondello Lido',
       distance: '1,2 km',
       // Foto: Bambina felice con colori e pennelli (solo bambini)
-      image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.creativi,
       ageMin: 3,
       ageMax: 6,
       timeRange: '16:30 - 17:30',
@@ -262,7 +263,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       venueName: 'Palermo Centro',
       distance: '2,4 km',
       // Foto: Bimbo sorridente che gioca nell\'acqua azzurra (solo bambini)
-      image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.nuoto,
       ageMin: 4,
       ageMax: 8,
       timeRange: '17:00 - 18:00',
@@ -279,7 +280,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       venueName: 'Parco Uditore',
       distance: '3,1 km',
       // Foto: Bimbo sorridente con il pallone da calcio su prato (solo bambini)
-      image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=600&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.sport,
       ageMin: 5,
       ageMax: 10,
       timeRange: '17:30 - 18:30',
@@ -296,7 +297,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       venueName: 'Giardino Inglese',
       distance: '1,8 km',
       // Foto: Bambini sorridenti che piantano semi nel parco (solo bambini)
-      image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.parchi,
       ageMin: 4,
       ageMax: 9,
       timeRange: '16:30 - 17:45',
@@ -313,7 +314,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       venueName: 'Politeama Centro',
       distance: '2,1 km',
       // Foto: Bimbi allegri alle prese con xilofoni e strumenti musicali (solo bambini)
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80',
+      image: ILLUSTRAZIONI.musica,
       ageMin: 2,
       ageMax: 5,
       timeRange: '17:00 - 18:00',

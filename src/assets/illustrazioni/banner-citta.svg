@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD7C2"/>
+      <stop offset="1" stop-color="#FCE4EC"/>
+    </linearGradient>
+    <filter id="acquerello" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="4" result="rumore"/>
+      <feDisplacementMap in="SourceGraphic" in2="rumore" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="carta">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.30  0 0 0 0 0.38  0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#cielo)"/>
+  <g filter="url(#acquerello)">
+<circle cx="620" cy="300" r="96" fill="#FFD27A" opacity="0.25"/><circle cx="620" cy="300" r="70" fill="#FFD27A"/><path d="M520 380 C 600 220 700 200 800 260 L800 380 Z" fill="#E3D6EA"/><path d="M0 380 L80 380 L80 320 L130 320 L130 360 L190 360 L190 300 L210 280 L230 300 L230 360 L300 360 L300 330 C 300 290 360 290 360 330 L360 360 L430 360 L430 310 L470 310 L470 360 L540 360 L540 340 L600 340 L600 370 L680 370 L680 330 L720 330 L720 380 L800 380 L800 600 L0 600 Z" fill="#B596C0" opacity="0.75"/><circle cx="330" cy="318" r="18" fill="#E43B80" opacity="0.8"/><rect x="0" y="430" width="800" height="170" fill="#A6D8DC"/><path d="M0 560 C 200 500 420 520 800 470 L800 600 L0 600 Z" fill="#F6E3C5"/><g opacity="1.0"><path d="M 131.4 476.3 L 102.2 438.9" stroke="#E43B80" stroke-width="14.5" stroke-linecap="round" fill="none"/><path d="M 188.6 476.3 L 217.8 438.9" stroke="#E43B80" stroke-width="14.5" stroke-linecap="round" fill="none"/><path d="M 126.0 486.5 Q 126.0 466.1 160.0 466.1 Q 194.0 466.1 194.0 486.5 C 194.0 537.5 170.2 580.0 160.0 580.0 C 149.8 580.0 126.0 537.5 126.0 486.5 Z" fill="#E43B80"/><circle cx="160.0" cy="433.8" r="23.8" fill="#E43B80"/></g><g opacity="1.0"><path d="M 246.5 484.6 L 230.8 523.8" stroke="#0D7480" stroke-width="11.9" stroke-linecap="round" fill="none"/><path d="M 293.5 484.6 L 317.6 453.8" stroke="#0D7480" stroke-width="11.9" stroke-linecap="round" fill="none"/><path d="M 242.0 493.0 Q 242.0 476.2 270.0 476.2 Q 298.0 476.2 298.0 493.0 C 298.0 535.0 278.4 570.0 270.0 570.0 C 261.6 570.0 242.0 535.0 242.0 493.0 Z" fill="#0D7480"/><circle cx="270.0" cy="449.6" r="19.6" fill="#0D7480"/></g><g opacity="1.0"><path d="M 343.1 477.4 L 315.6 442.2" stroke="#F7B89A" stroke-width="13.6" stroke-linecap="round" fill="none"/><path d="M 396.9 477.4 L 424.4 442.2" stroke="#F7B89A" stroke-width="13.6" stroke-linecap="round" fill="none"/><path d="M 338.0 487.0 Q 338.0 467.8 370.0 467.8 Q 402.0 467.8 402.0 487.0 C 402.0 535.0 379.6 575.0 370.0 575.0 C 360.4 575.0 338.0 535.0 338.0 487.0 Z" fill="#F7B89A"/><circle cx="370.0" cy="437.4" r="22.4" fill="#F7B89A"/></g>
+  </g>
+  <rect width="800" height="600" filter="url(#carta)"/>
+</svg>

@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { OrganizerProfile, Activity, ActivitySlot, InternalRequest } from '../types';
 
+import { ILLUSTRAZIONI } from '../data/illustrazioni';
 interface OrganizerProfilePageProps {
   organizer: OrganizerProfile;
   onBack: () => void;
@@ -937,7 +938,7 @@ export const OrganizerProfilePage: React.FC<OrganizerProfilePageProps> = ({
                     {selectedActivityForSlots.instructors.map((inst, idx) => (
                       <div key={idx} className="bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex items-center gap-3">
                         <img 
-                          src={inst.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80'}
+                          src={inst.avatar || ILLUSTRAZIONI.profilo}
                           alt={inst.name}
                           className="w-10 h-10 rounded-full object-cover shrink-0 ring-2 ring-petrolio-500/30"
                         />

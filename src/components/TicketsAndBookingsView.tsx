@@ -24,6 +24,7 @@ import {
 import { Booking, Activity } from '../types';
 import { MamappLogo } from './MamappLogo';
 
+import { ILLUSTRAZIONI } from '../data/illustrazioni';
 interface TicketsAndBookingsViewProps {
   bookings: Booking[];
   onBackToHome: () => void;
@@ -38,7 +39,7 @@ const SAMPLE_BOOKINGS_DATA: Booking[] = [
     bookingCode: 'MAM-PA-882109',
     activityId: 'act-lucilla',
     activityTitle: 'Lucilla in Concerto - Live Show Bambini',
-    activityImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    activityImage: ILLUSTRAZIONI.musica,
     venueName: 'Teatro Golden Palermo',
     venueAddress: 'Via Terrasanta 60, Palermo',
     participantId: 'fam-3',
@@ -62,7 +63,7 @@ const SAMPLE_BOOKINGS_DATA: Booking[] = [
     bookingCode: 'MAM-PA-441029',
     activityId: 'act-sassi-mondello',
     activityTitle: 'Piccoli Artisti: Pittura sui Sassi del Mare',
-    activityImage: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80',
+    activityImage: ILLUSTRAZIONI.creativi,
     venueName: 'Atelier Bimbi Mondello',
     venueAddress: 'Viale Regina Margherita 42, Mondello (PA)',
     participantId: 'fam-1',
@@ -85,7 +86,7 @@ const SAMPLE_BOOKINGS_DATA: Booking[] = [
     bookingCode: 'MAM-PA-193820',
     activityId: 'act-orto-botanico',
     activityTitle: 'Visita Sensoriale & Tartarughe all\'Orto Botanico',
-    activityImage: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80',
+    activityImage: ILLUSTRAZIONI.parchi,
     venueName: 'Orto Botanico dell\'Università di Palermo',
     venueAddress: 'Via Lincoln 2, Palermo Centro',
     participantId: 'fam-2',

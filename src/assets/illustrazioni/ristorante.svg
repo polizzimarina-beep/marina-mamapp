@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF1E8"/>
+      <stop offset="1" stop-color="#FFF1E8"/>
+    </linearGradient>
+    <filter id="acquerello" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="4" result="rumore"/>
+      <feDisplacementMap in="SourceGraphic" in2="rumore" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="carta">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.30  0 0 0 0 0.38  0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#cielo)"/>
+  <g filter="url(#acquerello)">
+<rect x="0" y="0" width="800" height="380" fill="#FFF1E8"/><rect x="0" y="380" width="800" height="220" fill="#F6E3C5"/><path d="M220 0 L220 70" stroke="#D9A47A" stroke-width="3"/><path d="M190 100 C 190 60 250 60 250 100 Z" fill="#0D7480"/><path d="M580 0 L580 70" stroke="#D9A47A" stroke-width="3"/><path d="M550 100 C 550 60 610 60 610 100 Z" fill="#E43B80"/><g opacity="1.0"><path d="M 138.1 314.1 L 105.4 272.3" stroke="#E43B80" stroke-width="16.2" stroke-linecap="round" fill="none"/><path d="M 201.9 314.1 L 234.6 272.3" stroke="#E43B80" stroke-width="16.2" stroke-linecap="round" fill="none"/><path d="M 132.0 325.5 Q 132.0 302.7 170.0 302.7 Q 208.0 302.7 208.0 325.5 C 208.0 382.5 181.4 430.0 170.0 430.0 C 158.6 430.0 132.0 382.5 132.0 325.5 Z" fill="#E43B80"/><circle cx="170.0" cy="266.6" r="26.6" fill="#E43B80"/></g><g opacity="1.0"><path d="M 598.1 314.1 L 576.8 367.3" stroke="#B596C0" stroke-width="16.2" stroke-linecap="round" fill="none"/><path d="M 661.9 314.1 L 694.6 272.3" stroke="#B596C0" stroke-width="16.2" stroke-linecap="round" fill="none"/><path d="M 592.0 325.5 Q 592.0 302.7 630.0 302.7 Q 668.0 302.7 668.0 325.5 C 668.0 382.5 641.4 430.0 630.0 430.0 C 618.6 430.0 592.0 382.5 592.0 325.5 Z" fill="#B596C0"/><circle cx="630.0" cy="266.6" r="26.6" fill="#B596C0"/></g><rect x="380" y="430" width="40" height="150" fill="#D9A47A"/><ellipse cx="400" cy="425" rx="300" ry="44" fill="#FFFFFF"/><ellipse cx="400" cy="418" rx="110" ry="30" fill="#FFD27A"/><ellipse cx="400" cy="416" rx="94" ry="24" fill="#F08A6C"/><ellipse cx="350" cy="410" rx="11" ry="5" fill="#FFFFFF"/><ellipse cx="395" cy="405" rx="11" ry="5" fill="#7CC6A0"/><ellipse cx="440" cy="412" rx="11" ry="5" fill="#FFFFFF"/><ellipse cx="375" cy="425" rx="11" ry="5" fill="#E43B80"/><ellipse cx="425" cy="426" rx="11" ry="5" fill="#7CC6A0"/><ellipse cx="250" cy="420" rx="34" ry="10" fill="#CFEAF0"/><ellipse cx="560" cy="420" rx="34" ry="10" fill="#CFEAF0"/><rect x="680" y="480" width="60" height="60" rx="10" fill="#A6D8DC"/><rect x="700" y="450" width="40" height="40" rx="8" fill="#F09EB2"/>
+  </g>
+  <rect width="800" height="600" filter="url(#carta)"/>
+</svg>

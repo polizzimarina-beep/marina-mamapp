@@ -1,5 +1,6 @@
 import { Category, FamilyMemberProfile, Activity, Venue, Booking, TargetAudience, AgeBracketInfo, OrganizerProfile } from '../types';
 
+import { ILLUSTRAZIONI } from './illustrazioni';
 export const AGE_BRACKETS: AgeBracketInfo[] = [
   {
     id: '0-3',
@@ -228,7 +229,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Politeama / Centro',
     latitude: 38.1294,
     longitude: 13.3512,
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.teatro,
     rating: 4.9,
     reviewCount: 340,
     phone: '+39 091 626 4702',
@@ -244,7 +245,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Parco della Favorita',
     latitude: 38.1631,
     longitude: 13.3444,
-    image: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.parchi,
     rating: 4.8,
     reviewCount: 190,
     phone: '+39 091 740 1111',
@@ -260,7 +261,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Viale Libertà / Notarbartolo',
     latitude: 38.1420,
     longitude: 13.3280,
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     rating: 4.9,
     reviewCount: 210,
     phone: '+39 091 688 9012',
@@ -276,7 +277,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Mondello / Addaura',
     latitude: 38.2012,
     longitude: 13.3325,
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.mare,
     rating: 4.9,
     reviewCount: 420,
     phone: '+39 091 456 1234',
@@ -292,7 +293,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Parco della Favorita',
     latitude: 38.1560,
     longitude: 13.3480,
-    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.nuoto,
     rating: 4.6,
     reviewCount: 155,
     phone: '+39 091 670 3411',
@@ -308,7 +309,7 @@ export const MOCK_VENUES: Venue[] = [
     zone: 'Mondello / Addaura',
     latitude: 38.2045,
     longitude: 13.3390,
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.mare,
     rating: 4.9,
     reviewCount: 180,
     phone: '+39 091 450 011',
@@ -323,8 +324,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'body-studio',
     name: 'Body Studio Palermo - Fitness & Family',
     category: 'Club Sportivo & Wellness Famiglie',
-    logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Il punto di riferimento a Palermo per lo sport di tutta la famiglia. Piscina olimpionica e baby, campi da padel panoramici, spogliatoi famiglia attrezzati, centro estivo multisport e lezioni prova gratuite.',
     address: 'Via Venti Settembre 5, Palermo',
     city: 'Palermo',
@@ -343,8 +344,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'virgin-active',
     name: 'Virgin Active Palermo - Via Freedom',
     category: 'Club Fitness & Premium Wellness',
-    logo: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Club Fitness Premium nel cuore di Palermo. Piscina da 25m per nuoto neonatale e baby, corsi outdoor per mamme, lezioni di padel con maestri FITP e area relax e ristorazione bio.',
     address: 'Via Libertà 42, Palermo',
     city: 'Palermo',
@@ -363,8 +364,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'almanegra-kids',
     name: 'Almanegra Kids Events Palermo',
     category: 'Spettacoli & Concerti per Bambini',
-    logo: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.musica,
     description: 'Agenzia di produzione e promozione spettacoli dal vivo per famiglie e bambini a Palermo. Organizzatrice dei tour Lucilla Live, teatro dei pupi e musical per l\'infanzia.',
     address: 'Teatro Golden - Via Terrasanta 60, Palermo',
     city: 'Palermo',
@@ -383,8 +384,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'mamme-in-movimento',
     name: 'Mamme in Movimento Palermo',
     category: 'Associazione Benessere Maternità',
-    logo: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Community di ostetriche, insegnanti yoga ed esperte di movimento in gravidanza e post-parto a Palermo. Attività all\'aperto nei parchi e centri accreditati.',
     address: 'Parco della Favorita / Giardino Inglese, Palermo',
     city: 'Palermo',
@@ -402,8 +403,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'club-velico-mondello',
     name: 'Club Velico Mondello',
     category: 'Scuola Vela & Sport Acquatici',
-    logo: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.mare,
     description: 'Scuola di vela affiliata alla Federazione Italiana Vela (FIV) nella baia di Mondello. Corsi per ragazzi su barche Optimist, lezioni SUP e camp estivi di mare.',
     address: 'Viale Regina Elena 12, Mondello, Palermo',
     city: 'Palermo',
@@ -421,8 +422,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'sicilia-gokart',
     name: 'Sicilia Go-Kart Academy',
     category: 'Motorsport & Circuiti Karting',
-    logo: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Circuito outdoor con kart biposto per gare genitore-figlio, minikart per bambini dai 6 anni e scuola di guida in pista con cronometraggio professionale.',
     address: 'Circuito del Sole - Viale Regione Siciliana, Palermo',
     city: 'Palermo',
@@ -439,8 +440,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'accademia-musica',
     name: 'Accademia della Musica Palermo',
     category: 'Scuola di Musica & Laboratori',
-    logo: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.musica,
     description: 'Centro musicale e artistico per l\'infanzia. Propedeutica musicale per bimbi 0-6 anni, coro delle voci bianche, lezioni di pianoforte e percussioni.',
     address: 'Via Ruggero Settimo 28, Palermo',
     city: 'Palermo',
@@ -457,8 +458,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'circolo-favorita',
     name: 'Circolo Tennis Favorita',
     category: 'Club Tennis & Padel Junior',
-    logo: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Immerso nel Parco della Favorita, offre corsi di tennis per tutte le età, lezioni di padel padri-figli, piscina estiva e camp multi-attività.',
     address: 'Viale Ercole, Parco della Favorita, Palermo',
     city: 'Palermo',
@@ -475,8 +476,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'oxygen-fitness',
     name: 'OXYGEN Fitness Place',
     category: 'Discipline Sportive, Fitness & Salute',
-    logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'OXYGEN Fitness Place è il centro sportivo e palinsesto fitness di riferimento a Palermo per la ginnastica finalizzata alla salute, il condizionamento muscolare, fit boxe, functional circuit e rieducazione motoria. Con sala attrezzi interna ed esterna aperta 7 giorni su 7, offre un ricco palinsesto con corsi di Functional Joy Circuit, Fit Boxe, Tabata, Functional Glutes, Stretching Mobility, Yogy Ginnastica e Total Body guidati da istruttori qualificati.',
     address: 'Via Resuttana 360, Palermo',
     city: 'Palermo',
@@ -495,8 +496,8 @@ export const ORGANIZERS: OrganizerProfile[] = [
     id: 'spazio-euphoria',
     name: 'Spazio Euphoria - Circo Creativo',
     category: 'Arti Circensi, Acrobatica Aerea & Teen',
-    logo: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
-    coverImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80',
+    logo: ILLUSTRAZIONI.profilo,
+    coverImage: ILLUSTRAZIONI.sport,
     description: 'Spazio Euphoria - Circo Creativo è il centro polifunzionale a Palermo dedicato alle arti circensi contemporanee, alla danza aerea, al parkour e all\'acrobatica per bambini, teen e ragazzi. Offre un palinsesto settimanale continuo con lezioni fisse e ricorrenti dal Lunedì al Sabato condotte da insegnanti certificate (Antonella, Giulia, Chiara).',
     address: 'Via Delle Arti Circensi 12, Palermo',
     city: 'Palermo',
@@ -537,9 +538,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 16,
     priceUnit: 'a bambino',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&auto=format&fit=crop&q=80',
+    image: ILLUSTRAZIONI.creativi,
     gallery: [
-      'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&auto=format&fit=crop&q=80'
+      ILLUSTRAZIONI.creativi
     ],
     badges: ['Colori Atossici', 'Grembiulino Incluso', 'Piccoli Gruppi'],
     featured: true,
@@ -556,7 +557,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Atelier Bimbi Mondello',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Atelier d\'Arte'
     }
   },
@@ -583,9 +584,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 20,
     priceUnit: 'a bambino',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&auto=format&fit=crop&q=80',
+    image: ILLUSTRAZIONI.nuoto,
     gallery: [
-      'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&auto=format&fit=crop&q=80'
+      ILLUSTRAZIONI.nuoto
     ],
     badges: ['Acqua Riscaldata 32°', 'Istruttori FIN', 'Spogliatoio Famiglia'],
     featured: true,
@@ -602,7 +603,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Baby Swim Palermo',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola Nuoto'
     }
   },
@@ -629,9 +630,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 15,
     priceUnit: 'a bambino',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=800&auto=format&fit=crop&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=800&auto=format&fit=crop&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Campo in Erba Sintetica', 'Pallone Fornito', 'Educatori Sportivi'],
     featured: true,
@@ -648,7 +649,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Junior Academy Palermo',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Polisportivo'
     }
   },
@@ -675,9 +676,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 22,
     priceUnit: 'a bambino',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Tessuti Aerei', 'Tappeti di Sicurezza', 'Istruttori FGI'],
     featured: true,
@@ -694,7 +695,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Acro Gym Palermo',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Acrobatica'
     }
   },
@@ -721,9 +722,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 25,
     priceUnit: 'a bambino',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&auto=format&fit=crop&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&auto=format&fit=crop&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Kart Elettrici Sicuri', 'Casco & Tuta Forniti', 'Podio e Medaglia'],
     featured: true,
@@ -740,7 +741,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Karting Arena Palermo',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Circuito Kart'
     }
   },
@@ -766,12 +767,12 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 22,
     priceUnit: 'biglietto unico',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.musica,
     videoTeaserUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
     gallery: [
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.musica,
+      ILLUSTRAZIONI.musica,
+      ILLUSTRAZIONI.musica
     ],
     badges: ['Lucilla Live Palermo', 'Incontro & Foto Finale', 'Sconto Famiglia -15%'],
     featured: true,
@@ -806,7 +807,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Almanegra Kids Events Palermo',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Organizzatore Tour Sicilia',
       phone: '+39 091 626 4702'
     },
@@ -814,7 +815,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Lucilla',
         role: 'Artista & Cantante Bambini',
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: 'Star della musica infanzia con oltre 100M di visualizzazioni',
         certifications: ['Live Show Award 2025']
       }
@@ -862,10 +863,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 18,
     priceUnit: 'singola sessione',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Lezione Prova Gratis', 'Tisana Rinfrescante Inclusa', 'Spazio Bimbi Accanto'],
     featured: true,
@@ -899,7 +900,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Mamme in Movimento Palermo',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Certificato Yoga Maternità',
       phone: '+39 091 740 1111'
     },
@@ -907,7 +908,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Federica Bonanno',
         role: 'Insegnante Yoga Post-Parto & Doula',
-        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: '10 anni di insegnamento yoga maternità',
         certifications: ['RYT 500 Prenatal & Postnatal']
       }
@@ -945,10 +946,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 35,
     priceUnit: 'coppia Papà + Figlio',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Sconto Coppia Papà-Figlio', 'Casco & Balaclava Forniti', 'Stampa Tempi e Podio'],
     featured: true,
@@ -978,7 +979,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Kartsam Racing Club Palermo',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Pista Ufficiale ACI Sport',
       phone: '+39 091 688 9012'
     },
@@ -986,7 +987,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Salvatore Sammito',
         role: 'Direttore di Pista & Pilota Karting',
-        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: '15 anni in gare nazionali',
         certifications: ['Istruttore ACI Sport']
       }
@@ -1025,10 +1026,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 30,
     priceUnit: 'pass giornaliero famiglia',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.mare,
     gallery: [
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.mare,
+      ILLUSTRAZIONI.mare
     ],
     badges: ['1 Ombrellone + 2 Lettini', 'Miniclub Bambini Incluso', 'Docce Calde & Cabina'],
     featured: true,
@@ -1046,7 +1047,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Stabilimento Mondello Mare',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Gestione Balneare Mondello',
       phone: '+39 091 456 1234'
     },
@@ -1054,7 +1055,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Martina & Staff Animazione',
         role: 'Responsabile Miniclub Spiaggia',
-        avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: 'Animazione estiva infanzia',
         certifications: ['Primo Soccorso & Salvamento']
       }
@@ -1093,10 +1094,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 20,
     priceUnit: 'lezione prova',
     courseType: 'trial',
-    image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.nuoto,
     gallery: [
-      'https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.nuoto,
+      ILLUSTRAZIONI.nuoto
     ],
     badges: ['Lezione Prova Gratis', 'Acqua a 32°C', 'Presenza in Vasca Mamma/Papà'],
     featured: false,
@@ -1113,7 +1114,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Scuola Nuoto Palermo Junior',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Federazione Italiana Nuoto Palermo',
       phone: '+39 091 670 3411'
     },
@@ -1121,7 +1122,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Rosaria Di Maggio',
         role: 'Istruttrice Nazionale FIN Neonatale',
-        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: '12 anni in corsi acquaticità neonatale',
         certifications: ['Brevetto FIN Infanzia']
       }
@@ -1160,10 +1161,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 40,
     priceUnit: 'coppia papà e figlio',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.mare,
     gallery: [
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.mare,
+      ILLUSTRAZIONI.mare
     ],
     badges: ['Gubbino di Salvataggio Incluso', 'Racchette Padel Fornite', 'Aperitivo Finale al Circolo'],
     featured: false,
@@ -1180,7 +1181,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Circolo Lauria Mondello',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Circolo Nautico d’Eccellenza',
       phone: '+39 091 450 011'
     },
@@ -1188,7 +1189,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Istruttori FIV Mondello',
         role: 'Maestri di Vela & Padel',
-        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: 'Brevetto Federale FIV & FIT',
         certifications: ['FIV Level 2']
       }
@@ -1217,9 +1218,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 20,
     priceUnit: 'laboratorio di prova',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.creativi,
     gallery: [
-      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.creativi
     ],
     badges: ['Madrelingua Inglese', 'Kit LEGO WeDo 2.0', 'Attestato Junior'],
     featured: false,
@@ -1236,7 +1237,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'British Academy Palermo',
-      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Linguistico Celta',
       phone: '+39 091 324 551'
     },
@@ -1244,7 +1245,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'James O’Connor',
         role: 'Senior Native Teacher',
-        avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: '8 anni a Palermo',
         certifications: ['CELTA Cambridge']
       }
@@ -1273,9 +1274,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 15,
     priceUnit: 'lezione prova gratuita',
     courseType: 'trial',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.musica,
     gallery: [
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.musica
     ],
     badges: ['Gratuito', 'Madrelingua UK', 'Insieme ai Genitori'],
     featured: true,
@@ -1292,7 +1293,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Little England Palermo',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Infanzia Bilingue',
       phone: '+39 091 611 2233'
     },
@@ -1300,7 +1301,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Sarah Jenkins',
         role: 'Insegnante Bilingue Infanzia',
-        avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: 'Specializzata in fonetica baby',
         certifications: ['Early Years Educator UK']
       }
@@ -1329,9 +1330,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 28,
     priceUnit: 'a partecipante (degustazione inc.)',
     courseType: 'package',
-    image: 'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.creativi,
     gallery: [
-      'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.creativi
     ],
     badges: ['Pasticcere Maestro', 'Cannoli Caldi Fatti da Voi', 'Diploma di Mastro Pasticcere'],
     featured: true,
@@ -1348,7 +1349,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'I Maestri del Cannolo Palermo',
-      avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola Pasticceria Tradizionale',
       phone: '+39 091 582 109'
     },
@@ -1356,7 +1357,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
       {
         name: 'Maestro Ciccio Russo',
         role: 'Pasticcere Storico Palermitano',
-        avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=200&q=80',
+        avatar: ILLUSTRAZIONI.profilo,
         experience: '30 anni di tradizione culinaria',
         certifications: ['Mastro Pasticcere FIPGC']
       }
@@ -1385,9 +1386,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 9,
     priceUnit: 'a biglietto',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.teatro,
     gallery: [
-      'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.teatro
     ],
     badges: ['Pop-Corn Gratuito', 'Volume Audio Protetto Bimbi', 'Posti Riservati'],
     featured: true,
@@ -1404,7 +1405,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'CineClub Bambini Palermo',
-      avatar: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Organizzatore Cinema',
       phone: '+39 091 626 4702'
     },
@@ -1433,9 +1434,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 15,
     priceUnit: 'a bambino (giornaliero)',
     courseType: 'ticket',
-    image: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.ludoteca,
     gallery: [
-      'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.ludoteca
     ],
     badges: ['Accesso Illimitato', 'Area Ombra Relax', 'Istruttori di Sicurezza'],
     featured: true,
@@ -1452,7 +1453,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Favorita Adventure Park',
-      avatar: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Gestore Parco Avventura',
       phone: '+39 091 740 1111'
     },
@@ -1481,9 +1482,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 6,
     priceUnit: 'a corsa per adulto (bimbi gratis)',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.mare,
     gallery: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.mare
     ],
     badges: ['Navetta 100% Elettrica', 'Mappa Interattiva Incluso', 'Fermate Lidi Attrezzati'],
     featured: false,
@@ -1500,7 +1501,7 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'Mondello Express Family',
-      avatar: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Servizio Trasporti Turistici',
       phone: '+39 091 456 789'
     },
@@ -1530,10 +1531,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     priceUnit: 'ingresso giornaliero / prova',
     courseType: 'single',
     organizerId: 'oxygen-fitness',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Sala Esterna', 'Aperto 7 Giorni', 'Istruttori in Sala', 'Lezione Prova'],
     featured: true,
@@ -1554,15 +1555,15 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'OXYGEN Fitness Place',
-      avatar: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Fitness & Discipline Sportive',
       phone: '+39 091 688 2211'
     },
     instructors: [
-      { name: 'Alba Monteneri', role: 'Master Trainer Functional', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', experience: '10+ Anni', certifications: ['FIPE Functional', 'TRX Certificata'] },
-      { name: 'Giovanni Basile', role: 'Strength & Conditioning Specialist', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80', experience: '8 Anni', certifications: ['CSCS NSCA', 'Master Forza'] },
-      { name: 'Angelo Milazzo', role: 'Fit Boxe Coach', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80', experience: '12 Anni', certifications: ['FitBoxe Master', 'Kickboxing CONI'] },
-      { name: 'Liliana Ocello', role: 'Tabata & Glutes Trainer', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80', experience: '7 Anni', certifications: ['Group Fitness', 'Zumba B1'] }
+      { name: 'Alba Monteneri', role: 'Master Trainer Functional', avatar: ILLUSTRAZIONI.profilo, experience: '10+ Anni', certifications: ['FIPE Functional', 'TRX Certificata'] },
+      { name: 'Giovanni Basile', role: 'Strength & Conditioning Specialist', avatar: ILLUSTRAZIONI.profilo, experience: '8 Anni', certifications: ['CSCS NSCA', 'Master Forza'] },
+      { name: 'Angelo Milazzo', role: 'Fit Boxe Coach', avatar: ILLUSTRAZIONI.profilo, experience: '12 Anni', certifications: ['FitBoxe Master', 'Kickboxing CONI'] },
+      { name: 'Liliana Ocello', role: 'Tabata & Glutes Trainer', avatar: ILLUSTRAZIONI.profilo, experience: '7 Anni', certifications: ['Group Fitness', 'Zumba B1'] }
     ],
     reviews: []
   },
@@ -1589,10 +1590,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     priceUnit: 'singola lezione',
     courseType: 'single',
     organizerId: 'oxygen-fitness',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Functional Joy', 'Alba Monteneri', 'Tone & Burn', 'Musica & Energia'],
     featured: true,
@@ -1613,13 +1614,13 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'OXYGEN Fitness Place',
-      avatar: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Fitness & Discipline Sportive',
       phone: '+39 091 688 2211'
     },
     instructors: [
-      { name: 'Alba Monteneri', role: 'Functional Circuit Trainer', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', experience: '10+ Anni', certifications: ['FIPE Functional'] },
-      { name: 'Mary Prestigiacomo', role: 'Functional Trainer', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80', experience: '6 Anni', certifications: ['AICS Fitness'] }
+      { name: 'Alba Monteneri', role: 'Functional Circuit Trainer', avatar: ILLUSTRAZIONI.profilo, experience: '10+ Anni', certifications: ['FIPE Functional'] },
+      { name: 'Mary Prestigiacomo', role: 'Functional Trainer', avatar: ILLUSTRAZIONI.profilo, experience: '6 Anni', certifications: ['AICS Fitness'] }
     ],
     reviews: []
   },
@@ -1646,10 +1647,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     priceUnit: 'singola lezione',
     courseType: 'single',
     organizerId: 'oxygen-fitness',
-    image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Angelo Milazzo', 'Sacchi Da Boxe', 'Alta Intensità', 'Cardio Fun'],
     featured: true,
@@ -1670,12 +1671,12 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'OXYGEN Fitness Place',
-      avatar: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Fitness & Discipline Sportive',
       phone: '+39 091 688 2211'
     },
     instructors: [
-      { name: 'Angelo Milazzo', role: 'Master Fit Boxe Trainer', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80', experience: '12 Anni', certifications: ['FitBoxe Master', 'CONI'] }
+      { name: 'Angelo Milazzo', role: 'Master Fit Boxe Trainer', avatar: ILLUSTRAZIONI.profilo, experience: '12 Anni', certifications: ['FitBoxe Master', 'CONI'] }
     ],
     reviews: []
   },
@@ -1702,10 +1703,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     priceUnit: 'singola lezione',
     courseType: 'single',
     organizerId: 'oxygen-fitness',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Andrea Sposito', 'Luna Lo Faso', 'Posturale & Mobility', 'Zero Impatto'],
     featured: false,
@@ -1725,13 +1726,13 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'OXYGEN Fitness Place',
-      avatar: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Fitness & Discipline Sportive',
       phone: '+39 091 688 2211'
     },
     instructors: [
-      { name: 'Andrea Sposito', role: 'Mobility & Postural Coach', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80', experience: '8 Anni', certifications: ['Posturale Pancafit'] },
-      { name: 'Luna Lo Faso', role: 'Insegnante Yogy Ginnastica', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80', experience: '5 Anni', certifications: ['Yoga Alliance RYT200'] }
+      { name: 'Andrea Sposito', role: 'Mobility & Postural Coach', avatar: ILLUSTRAZIONI.profilo, experience: '8 Anni', certifications: ['Posturale Pancafit'] },
+      { name: 'Luna Lo Faso', role: 'Insegnante Yogy Ginnastica', avatar: ILLUSTRAZIONI.profilo, experience: '5 Anni', certifications: ['Yoga Alliance RYT200'] }
     ],
     reviews: []
   },
@@ -1758,10 +1759,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     priceUnit: 'singola lezione',
     courseType: 'single',
     organizerId: 'oxygen-fitness',
-    image: 'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Toty Di Stefano', 'Liliana Ocello', 'Zumba Fitness', 'Group Dance'],
     featured: false,
@@ -1781,14 +1782,14 @@ export const MOCK_ACTIVITIES: Activity[] = [
     ],
     organizer: {
       name: 'OXYGEN Fitness Place',
-      avatar: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Centro Fitness & Discipline Sportive',
       phone: '+39 091 688 2211'
     },
     instructors: [
-      { name: 'Toty Di Stefano', role: 'Total Body Coach', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80', experience: '15 Anni', certifications: ['Master Total Body'] },
-      { name: 'Liliana Ocello', role: 'Zumba & Aerobics Instructor', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80', experience: '7 Anni', certifications: ['ZIN Certified'] },
-      { name: 'Giulia Novelli', role: 'Insegnante Balli di Gruppo', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', experience: '6 Anni', certifications: ['FIDS'] }
+      { name: 'Toty Di Stefano', role: 'Total Body Coach', avatar: ILLUSTRAZIONI.profilo, experience: '15 Anni', certifications: ['Master Total Body'] },
+      { name: 'Liliana Ocello', role: 'Zumba & Aerobics Instructor', avatar: ILLUSTRAZIONI.profilo, experience: '7 Anni', certifications: ['ZIN Certified'] },
+      { name: 'Giulia Novelli', role: 'Insegnante Balli di Gruppo', avatar: ILLUSTRAZIONI.profilo, experience: '6 Anni', certifications: ['FIDS'] }
     ],
     reviews: []
   },
@@ -1814,10 +1815,10 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 55,
     priceUnit: 'al mese',
     courseType: 'monthly',
-    image: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport,
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Tutti i giorni segnati', 'Istruttrici Certificate', 'Tessuti & Cerchio', 'Lezione Prova Gratis'],
     popular: true,
@@ -1837,13 +1838,13 @@ export const MOCK_ACTIVITIES: Activity[] = [
     organizerId: 'spazio-euphoria',
     organizer: {
       name: 'Spazio Euphoria - Circo Creativo',
-      avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola di Circo & Acrobatica',
       phone: '+39 091 582 3010'
     },
     instructors: [
-      { name: 'Antonella', role: 'Insegnante Aerea Teen & Multi Ninja', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80', experience: '8 Anni', certifications: ['FIDS Acrobatica Aerea', 'AICS'] },
-      { name: 'Giulia', role: 'Insegnante Aerea L1/L2', avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80', experience: '6 Anni', certifications: ['Ginnastica Aerea'] }
+      { name: 'Antonella', role: 'Insegnante Aerea Teen & Multi Ninja', avatar: ILLUSTRAZIONI.profilo, experience: '8 Anni', certifications: ['FIDS Acrobatica Aerea', 'AICS'] },
+      { name: 'Giulia', role: 'Insegnante Aerea L1/L2', avatar: ILLUSTRAZIONI.profilo, experience: '6 Anni', certifications: ['Ginnastica Aerea'] }
     ],
     reviews: [],
     latitude: 38.125,
@@ -1871,9 +1872,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 60,
     priceUnit: 'al mese',
     courseType: 'monthly',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Aerea L2', 'Level Up', 'Ogni Martedì & Giovedì', 'Spettacoli di Fine Anno'],
     popular: true,
@@ -1891,13 +1892,13 @@ export const MOCK_ACTIVITIES: Activity[] = [
     organizerId: 'spazio-euphoria',
     organizer: {
       name: 'Spazio Euphoria - Circo Creativo',
-      avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola di Circo & Acrobatica',
       phone: '+39 091 582 3010'
     },
     instructors: [
-      { name: 'Giulia', role: 'Insegnante Aerea L2', avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80', experience: '6 Anni', certifications: ['Aerea AICS'] },
-      { name: 'Antonella', role: 'Insegnante Aerea Level Up', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80', experience: '8 Anni', certifications: ['Acrobatica Aerea'] }
+      { name: 'Giulia', role: 'Insegnante Aerea L2', avatar: ILLUSTRAZIONI.profilo, experience: '6 Anni', certifications: ['Aerea AICS'] },
+      { name: 'Antonella', role: 'Insegnante Aerea Level Up', avatar: ILLUSTRAZIONI.profilo, experience: '8 Anni', certifications: ['Acrobatica Aerea'] }
     ],
     reviews: [],
     latitude: 38.125,
@@ -1925,9 +1926,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 50,
     priceUnit: 'al mese',
     courseType: 'monthly',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Parkour & Ninja', 'Agilità e Salto', 'Ogni Lun, Mer & Ven', 'Divertimento Assicurato'],
     popular: true,
@@ -1945,13 +1946,13 @@ export const MOCK_ACTIVITIES: Activity[] = [
     organizerId: 'spazio-euphoria',
     organizer: {
       name: 'Spazio Euphoria - Circo Creativo',
-      avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola di Circo & Acrobatica',
       phone: '+39 091 582 3010'
     },
     instructors: [
-      { name: 'Antonella', role: 'Insegnante Multi Ninja', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80', experience: '8 Anni', certifications: ['Parkour & Acro'] },
-      { name: 'Chiara', role: 'Insegnante Acro Ninja & Acrobatica', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', experience: '5 Anni', certifications: ['Ginnastica Acrobatica'] }
+      { name: 'Antonella', role: 'Insegnante Multi Ninja', avatar: ILLUSTRAZIONI.profilo, experience: '8 Anni', certifications: ['Parkour & Acro'] },
+      { name: 'Chiara', role: 'Insegnante Acro Ninja & Acrobatica', avatar: ILLUSTRAZIONI.profilo, experience: '5 Anni', certifications: ['Ginnastica Acrobatica'] }
     ],
     reviews: [],
     latitude: 38.125,
@@ -1979,9 +1980,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 55,
     priceUnit: 'al mese',
     courseType: 'monthly',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Acrobatica a Terra', 'Verticalismo', 'Ogni Lunedì & Mercoledì', 'Teen 14+'],
     description: 'Lezione dedicata al condizionamento fisico, verticalismo, capovolte, flic, ruote, salti al mini-trampolino e lavoro di coppia in acro-balance per ragazzi dai 14 anni in su. Lezioni fisse e ripetute ogni settimana nei giorni di Lunedì e Mercoledì.',
@@ -1996,12 +1997,12 @@ export const MOCK_ACTIVITIES: Activity[] = [
     organizerId: 'spazio-euphoria',
     organizer: {
       name: 'Spazio Euphoria - Circo Creativo',
-      avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola di Circo & Acrobatica',
       phone: '+39 091 582 3010'
     },
     instructors: [
-      { name: 'Chiara', role: 'Insegnante Acrobatica 14+', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80', experience: '5 Anni', certifications: ['Ginnastica Acrobatica'] }
+      { name: 'Chiara', role: 'Insegnante Acrobatica 14+', avatar: ILLUSTRAZIONI.profilo, experience: '5 Anni', certifications: ['Ginnastica Acrobatica'] }
     ],
     reviews: [],
     latitude: 38.125,
@@ -2029,9 +2030,9 @@ export const MOCK_ACTIVITIES: Activity[] = [
     originalPrice: 20,
     priceUnit: 'a sessione',
     courseType: 'single',
-    image: 'https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&w=800&q=80',
+    image: ILLUSTRAZIONI.sport,
     gallery: [
-      'https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&w=800&q=80'
+      ILLUSTRAZIONI.sport
     ],
     badges: ['Free Training', 'Atelier Sabato', 'Workshop Intensivi', 'Assistenza Tutor'],
     description: 'Il Sabato da Spazio Euphoria è dedicato alla pratica libera assistita dai tutor (dalle 11:30 alle 14:30) per perfezionare le proprie discipline, e nel pomeriggio (dalle 16:00 alle 20:00) a workshop intensivi ed atelier artistici con maestri ed artisti del circo contemporaneo ospiti.',
@@ -2046,12 +2047,12 @@ export const MOCK_ACTIVITIES: Activity[] = [
     organizerId: 'spazio-euphoria',
     organizer: {
       name: 'Spazio Euphoria - Circo Creativo',
-      avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80',
+      avatar: ILLUSTRAZIONI.profilo,
       role: 'Scuola di Circo & Acrobatica',
       phone: '+39 091 582 3010'
     },
     instructors: [
-      { name: 'Staff Spazio Euphoria', role: 'Tutor & Artist Guest', avatar: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=200&q=80', experience: 'Team', certifications: ['Circo Contemporaneo'] }
+      { name: 'Staff Spazio Euphoria', role: 'Tutor & Artist Guest', avatar: ILLUSTRAZIONI.profilo, experience: 'Team', certifications: ['Circo Contemporaneo'] }
     ],
     reviews: [],
     latitude: 38.125,
@@ -2065,7 +2066,7 @@ export const INITIAL_BOOKINGS: Booking[] = [
     bookingCode: 'PAL-98241',
     activityId: 'act-lucilla',
     activityTitle: 'Lucilla in Concerto - Live Show Bambini',
-    activityImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    activityImage: ILLUSTRAZIONI.musica,
     venueName: 'Teatro Golden Palermo',
     venueAddress: 'Via Terrasanta 60, Palermo',
     participantId: 'fam-3',
@@ -2127,7 +2128,7 @@ export const PROMO_BANNERS = [
     badge: 'EVENTO TOP',
     bgGradient: 'from-orange-500 via-amber-500 to-yellow-500',
     textColor: 'text-amber-950',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80',
+    image: ILLUSTRAZIONI.musica,
     tag: 'Biglietti Disponibili'
   },
   {
@@ -2137,7 +2138,7 @@ export const PROMO_BANNERS = [
     badge: 'PROVA GRATIS',
     bgGradient: 'from-brand-500 via-brand-500 to-purple-600',
     textColor: 'text-white',
-    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=500&q=80',
+    image: ILLUSTRAZIONI.sport,
     tag: 'Senza Impegno'
   },
   {
@@ -2147,7 +2148,7 @@ export const PROMO_BANNERS = [
     badge: 'SUPER SPEED',
     bgGradient: 'from-red-600 via-orange-600 to-amber-600',
     textColor: 'text-white',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80',
+    image: ILLUSTRAZIONI.sport,
     tag: 'Codice: PAPASPEED'
   }
 ];
