@@ -21,9 +21,6 @@ import {
   FamilyProfilesModal 
 } from './components/FamilyProfilesModal';
 import { 
-  MapView 
-} from './components/MapView';
-import { 
   MapScreenView 
 } from './components/MapScreenView';
 import {

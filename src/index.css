@@ -102,3 +102,70 @@
 .leaflet-container {
   font-family: inherit !important;
 }
+
+/* Pin della mappa (MapScreenView): pillola rosa-lampone con il prezzo
+   o con il numero di attività nello stesso luogo. */
+.mamapp-marker {
+  background: transparent !important;
+  border: none !important;
+}
+.mamapp-marker__pill {
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--color-brand-600);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(184, 29, 91, 0.28);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.mamapp-marker__pill::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--color-brand-600);
+}
+.mamapp-marker__pill.is-group {
+  background: #ffffff;
+  color: var(--color-brand-600);
+  border-color: var(--color-brand-600);
+}
+.mamapp-marker__pill.is-group::after {
+  border-top-color: var(--color-brand-600);
+}
+.mamapp-marker__pill.is-selected {
+  background: var(--color-petrolio-700);
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateX(-50%) scale(1.12);
+}
+.mamapp-marker__pill.is-selected::after {
+  border-top-color: var(--color-petrolio-700);
+}
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+.mamapp-marker__icon {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 12px;
+  line-height: 1;
+}
+/* Sfondo mappa più tenue e pulito, così risaltano i pin rosa-lampone */
+.mamapp-map .leaflet-tile-pane {
+  filter: saturate(0.45) brightness(1.06) contrast(0.92);
+}
